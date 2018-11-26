@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Python - Level 2</title>
+
+    <meta name="description" content="An introduction to python">
+    <meta name="author" content="Kathrin Schuler and Natalie Keating">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Intro Slide -->
+            <section>
+                <h1>Learn more Python</h1>
+                <h3>Lessons 1-5</h3>
+                <p>
+                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
+                </p>
+            </section>
+
+            <!-- Lessons Slide -->
+            <section>
+                <h3><a href="#/lesson-1">Lesson 1</a></h3>
+                <h3><a href="#/lesson-2">Lesson 2</a></h3>
+                <h3><a href="#/lesson-3">Lesson 3</a></h3>
+                <h3><a href="#/lesson-4">Lesson 4</a></h3>
+                <h3><a href="#/lesson-5">Lesson 5</a></h3>
+            </section>
+
+            <!-- About us -->
+            <section>
+                <section>
+                    <h2>About us</h2>
+                </section>
+                <section>
+                    <h2>Kathrin Schuler</h2>
+                    <p>Financial Software Developer at Bloomberg</p>
+                    <br>
+                </section>
+                 <section>
+                    <h2>Natalie Keating</h2>
+                    <p>Financial Software Developer at Bloomberg</p>
+                    <br>
+                </section>
+            </section>
+
+            <!-- Intro Slide Lesson 1-->
+            <section id="lesson-1">
+
+                <h1>Learn more Python</h1>
+                <h3>Lesson 1</h3>
+                <p>
+                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
+                </p>
+            </section>
+
+            <!-- Basics -->
+            <section title="Interactive shell">
+                <section>
+                    <h2>Expressions and the interactive shell</h2>
+                </section>
+            </section>
+            <section>
+                <h2>Thank you!!</h2>
+            </section>
+
+            <!-- Lesson 2 -->
+            <section id="lesson-2">
+                <h1>Learn more Python</h1>
+                <h3>Lesson 2</h3>
+                <p>
+                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
+                </p>
+            </section>
+
+            <!-- LESSON 3 -->
+            <section id="lesson-3">
+                <h1>Learn more Python</h1>
+                <h3>Lesson 3</h3>
+                <p>
+                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
+                </p>
+            </section>
+
+            <!-- Functions -->
+            <section title="Functions">
+                <section>
+                    <h2>Functions</h2>
+                </section>
+            </section>
+            <!-- LESSON 4 -->
+            <section id="lesson-4">
+                <h1>Learn more Python</h1>
+                <h3>Lesson 4</h3>
+                <p>
+                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
+                </p>
+            </section>
+
+             <section>
+                <h2>Thank you!!</h2>
+            </section>
+
+             <!-- LESSON 5 -->
+            <section id="lesson-5">
+                <h1>Learn more Python</h1>
+                <h3>Lesson 5</h3>
+                <p>
+                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
+                </p>
+            </section>
+
+            <section title="Setting up Jupyter Notebook">
+                <section>
+                    <h3>Setting up Jupyter Notebook</h3>
+                </section>
+            <section>
+                <h2>Thank you!!</h2>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'none', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/search/search.js',
+                async: true
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+
+</body>
+
+</html>
