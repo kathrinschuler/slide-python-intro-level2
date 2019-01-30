@@ -174,6 +174,223 @@
                     <h2>Webscraping</h2>
                 </section>
             </section>
+
+            <section title="HTML">
+                <section>
+                    <h3>Quick Introduction to HTML</h3>
+                </section>
+                <section>
+                    <p>Hypertext Markup Language (HTML) is the format that web pages are written in.
+                        You can find some beginner tutorials here: <br><br>
+
+                    <a href="http://htmldog.com/guides/html/beginner/">http://htmldog.com/guides/html/beginner/</a><br>
+
+                    <a href="https://www.w3schools.com/whatis/whatis_html.asp">https://www.w3schools.com/whatis/whatis_html.asp</a><br>
+
+                    <a href="https://developer.mozilla.org/en-US/learn/html/">https://developer.mozilla.org/en-US/learn/html/</a></p>
+                </section>
+
+                <section>
+                    <h4>HTML Elements</h4>
+                    <small>Every HTML web page is built using building blocks, the so called "HTML Elements".
+                        Those elements are opened using &lt;&gt; and closed using &lt;/&gt;. They can enclose some text.
+                        There can also be so-called attributes that define the element further.</small>
+                      <pre><code class="html" data-trim contenteditable>
+                          <body>
+                          <p>This is a paragraph</p>
+                          <h3>This is a heading</h3>
+                          <h4 class="some-class" id="some-id">This is a heading too</h4>
+                          <a href="www.google.com">This is a link</a>
+                          </body>
+                        </code></pre>
+                </section>
+                <section>
+                    <h4>How to see the source HTML of a webpage</h4>
+                    <small>You’ll need to look at the HTML source of the web page that your program will work with.
+                        To do this, right-click (or CTRL-click on OS X) any web page in your web browser,
+                        and select View Source or View page source to see the HTML text of the page.</small>
+                    <img height="300" data-src="pics/view_page_source.jpg" alt="view_page_source">
+                    <div class="fragment">
+                    <small>Another option is to use Developer tools (F12 in Chrome) and inspect the elements</small>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Your first Webscraper</h3>
+                </section>
+                <section>
+                    <h4>1. Import your dependencies</h4>
+                    <small><a href="http://docs.python-requests.org/en/master/">requests</a> is a Python library to get the content of a URL (amongst other things). We will use this to get our HTML file.
+                        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a> is a Python library for pulling data out of HTML and XML files.</small>
+                      <pre><code class="python" data-trim contenteditable>
+                          import requests
+                          from bs4 import BeautifulSoup
+                          from datetime import datetime  # We will use this to print the time of the scraping
+                        </code></pre>
+                </section>
+                <section>
+                    <h4>2. Set the URL and proxies</h4>
+                    <small>A proxy server is a gateway between the internet and you.
+                        All the content will go through the proxy to the internet and back to you.
+                        If you are in a corporate network you will need a proxy to access the internet. Ask your instructors if you need it!</small>
+                    <small>In this example we will try to get Apples stock price at the moment of scraping from marketwatch.com</small>
+                      <pre><code class="python" data-trim contenteditable>
+                          # Proxy dict of the form:
+                          # proxy_dict = {
+                          #     'http': 'http://myproxy:12345',
+                          #     'https': 'https://myproxy:12345'
+                          # }
+                          proxy_dict = {} # Set proxies here if needed!
+
+                          # The URL you want to scrape
+                          url = "https://www.marketwatch.com/investing/stock/aapl"
+                        </code></pre>
+                </section>
+                <section>
+                    <h4>3. Get the HTML content</h4>
+                    <small>In order to parse the web page we need to get all of its content first. We will be using
+                    the requests module for this.</small>
+                      <pre><code class="python" data-trim contenteditable>
+                          # Get the content of the page using the requests library
+                          resp = requests.get(url, stream=True, proxies=proxy_dict)
+                          if resp.status_code != 200: # 200 means success
+                              print("ERROR! Could not get data from URL. Response: {}".format(resp))
+                              exit
+                          else:
+                              raw_html = resp.content
+                        </code></pre>
+                </section>
+                <section>
+                    <h4>4. Inspect your data </h4>
+                    <small>Now you can inspect <pre>raw_html</pre> to make sure the request worked.</small>
+                    <pre><code class="python" data-trim contenteditable>
+                        raw_html
+                    </code></pre>
+                    <img height="300" src="pics/webscraping_raw_data.PNG" alt="raw_html">
+                </section>
+                <section>
+                    <h4>5. Create an HTML Parser</h4>
+                    <small>We'll use BeautifulSoup to parse our HTML file:</small>
+                     <pre><code class="python" data-trim contenteditable>
+                        soup = BeautifulSoup(raw_html, 'html.parser')
+                    </code></pre>
+                </section>
+                <section>
+                    <h4>6. Parse the elements</h4>
+                    <small>Now we will need to know which element/tag we want to use.
+                        We can use the page inspect tool for this.</small>
+                    <small>From the inspection we know the element we want to use looks like this:</small>
+                    <pre><code class="html" data-trim contenteditable>
+                        <bg-quote
+                                class="value positive"
+                                field="Last"
+                                format="0,0.00"
+                                channel="/quotes/zigman/68270/composite,/quotes/zigman/68270/lastsale"
+                                data-last-stamp="1548863998002"
+                                data-last-raw="165.32">165.32</bg-quote>
+                    </code></pre>
+                </section>
+                <section>
+                    <small> Different elements can have different attributes (for example id, class,..etc).
+                    Based on this we can select those using BeautifulSoup.</small>
+                    <table style="font-size: 25px">
+                        <thead>
+                            <tr>
+                                <th>Selector</th>
+                                <th>Matches</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>soup.select('div')</td>
+                                <td>All elements named &lt;div&gt;</td>
+                            </tr>
+                            <tr>
+                                <td>soup.select('#author')</td>
+                                <td>Element with an id attribute called author</td>
+                            </tr>
+                            <tr>
+                                <td>soup.select('.notice')</td>
+                                <td>All element that use the 'class' attribute named 'notice'</td>
+                            </tr>
+                            <tr>
+                                <td>soup.select('div span')</td>
+                                <td>All elements named &lt;span&gt; within a &lt;div&gt; element</td>
+                            </tr>
+                            <tr>
+                                <td>soup.select('input[name]')</td>
+                                <td>All elements named &lt;input&gt; that have a name attribute (with any value)</td>
+                            </tr>
+                         <tr>
+                                <td>soup.select('input[name=Kathrin]')</td>
+                                <td>All elements named &lt;input&gt; that have a name attribute = Kathrin</td>
+                            </tr>
+                        </tbody>
+                    </table><br>
+                    <div class="fragment">
+                    <small>The various selector patterns can be combined to make sophisticated matches.
+                        For example, <code>soup.select('p #author')</code> will match any element that has an id attribute of author,
+                        as long as it is also inside a &lt;p&gt; element.</small></div>
+                </section>
+                <section>
+                    <small>In our case we want to get the tag called <code>bg-quote</code> with the <code>field</code> = 'Last'.
+                    The way to achieve this is using the select statement as follows:</small>
+                    <div class="fragment">
+                    <pre><code class="python" data-trim contenteditable>
+                        element_with_price = soup.select('bg-quote[field=Last]')
+                    </code></pre><br>
+                    </div>
+                     <div class="fragment">
+                         <small>When you inspect <code>element_with_price</code> you will notice that this returns a list.
+                             This makes sense because our select could match more than one element! In our case the select is detailed enough to only
+                         return one, therefore we can just access the first element of the list instead:</small>
+                    <pre><code class="python" data-trim contenteditable>
+                        element_with_price = soup.select('bg-quote[field=Last]')[0]
+                    </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h4>7. Retrieve the price value</h4>
+                    <small>Sometimes you will want to scrape the value of an attribute, and sometimes the text between the tags:</small>
+                    <pre><code class="html" data-trim contenteditable>
+                        <p class="some-class" field="some_field">some text</p>
+                    </code></pre>
+                    <small>In the example above you might be interested in either the field ("some_field") or
+                        the text (some text) between the &lt;p&gt; tags.</small><br><br>
+                    <div class="fragment">
+                        <small>
+                        BeautifulSoup offers us the functionality to get exactly that:</small>
+                     <pre><code class="python" data-trim contenteditable>text = element.get_text()  # Will return 'some text'
+                    </code></pre>
+                    </div>
+                     <div class="fragment">
+                        <small>
+                        To get an attribute value we would use <code>get(..)</code> instead of <code>get_text()</code></small>
+                     <pre><code class="python" data-trim contenteditable>
+                        field_name = element.get('field')  # Will return 'some_field'</code></pre>
+                    </div>
+                </section>
+
+                    <section>
+                    <small>
+                        In our case we are interested in the text between the tags (The actual price!).</small>
+                     <pre><code class="python" data-trim contenteditable>
+                        price_text = element_with_price.get_text()
+                    </code></pre>
+                        <small>Attention: This will always return a string. If you want the actual numerical value you will need to
+                        convert this to a float!</small>
+                </section>
+                <section>
+                    <h4>8. Finalize</h4>
+                    <small>Now you can do some more processing with your data or just simply print it out</small>
+                    <pre><code class="python" data-trim contenteditable>
+                        print("The Apple Share price at {} was {}$".format(datetime.now(), price_text))
+                    </code></pre>
+                </section>
+            </section>
+
             <section>
                 <h2>Thank you!!</h2>
             </section>
