@@ -190,7 +190,7 @@
             <section title="Multiline Strings">
                 <section>
                     <h2>Triple Quotes</h2>
-                    <small>The <i>\n</i> escape character is helpful for formatting long strings, but is an artifact of older programming languages.</small>
+                    <small>The \n escape character is helpful for formatting long strings, but is an artifact of older programming languages.</small>
                     <small>Python provides multiline strings, which are surrounded by either <b>three</b> single quotes or <b>three</b> double quotes.</small>
                     <div class="fragment">
                         <small>Try writing the following code:</small>
@@ -202,6 +202,44 @@
                         Sincerely,
                         Bob''')</code></pre>
                     </div>
+                </section>
+                <section>
+                    <h2>Multiline Comments</h2>
+                    <small>Remember that we use the # character to mark the beginning of a comment for the remainder of a line.</small>
+                    <div class="fragment">
+                        <small>A multiline string is often used for comments that span multiple lines.  The following is valid and acceptable Python code:</small>
+                        <pre><code class="python" data-trim contenteditable>
+                        def spam():
+                            """This is a multiline comment to document
+                            the purpose of the spam() function.
+                            
+                            It's to print spam."""
+                            print('Hello!')</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section title="Indexing and Slicing">
+                <section>
+                    <h2>Indexing in Lists</h2>
+                    <small>Recall that the items in a list can be referred to using 'indices' or 'indexes'.</small>
+                    <pre><code class="python" data-trim contenteditable>
+                    >>> my_list = ['zero', 'one', 'two', 'three']
+                    >>> my_list[0]
+                    'zero'
+                    >>> my_list[1]
+                    'one'
+                    >>> my_list[0] = 'orez'
+                    >>> my_list[0]
+                    'orez'</pre></code>
+                </section>
+                <section>
+                    <h2>Indexing in Strings</h2>
+                    <small>Strings are <i>'indexed'</i> in the same manner as lists.</small>
+                    <small>That means you can access the individual characters in the string by referring to their position within the string.</small>
+                    <small>Let's consider the string "Hello world!":</small>
+                    <pre><code data-trim contenteditable>
+                    '  H  e  l  l  o     w  o  r  l  d  !  '
+                       0  1  2  3  4  5  6  7  8  9  10 11</code></pre>
                 </section>
             </section>
 	<!--	
