@@ -223,30 +223,38 @@
                     <h2>Indexing in Lists</h2>
                     <small>Recall that the items in a list can be referred to using 'indices' or 'indexes'.</small>
                     <pre><code class="python" data-trim contenteditable>
-                    >>> my_list = ['zero', 'one', 'two', 'three']
+                    >>> my_list = ['Hello', 'world', '!']
                     >>> my_list[0]
-                    'zero'
-                    >>> my_list[1]
-                    'one'
-                    >>> my_list[0] = 'orez'
-                    >>> my_list[0]
-                    'orez'</pre></code>
+                    'Hello'
+                    >>> my_list[1:]
+                    ['world', '!']</pre></code>
                 </section>
                 <section>
                     <h2>Indexing in Strings</h2>
                     <small>Strings are <i>'indexed'</i> in the same manner as lists.</small>
                     <small>That means you can access the individual characters in the string by referring to their position within the string.</small>
-                    <small>Let's consider the string "Hello world!":</small>
-                    <pre><code data-trim contenteditable>
-                    '  H  e  l  l  o     w  o  r  l  d  !  '
-                       0  1  2  3  4  5  6  7  8  9  10 11</code></pre>
+                    <div class="fragment">
+                        <small>Let's consider the string "Hello world!":</small>
+                        <pre><code data-trim contenteditable>
+                        '  H  e  l  l  o     w  o  r  l  d  !  '
+                           0  1  2  3  4  5  6  7  8  9  10 11</code></pre>
+                    </div>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> my_str = 'Hello world!'
+                        >>> my_str[0]
+                        'H'
+                        >>> my_str[6]
+                        'w'
+                        >>> my_str[0:6]
+                        'Hello '
+                        >>> world = my_str[6:]
+                        >>> world + my_str
+                        'world!Hello world!'</code></pre>
+                    </div>
                 </section>
             </section>
-	<!--	
--	Use this class to reiterate over modules and functions
--	String literales/double quotes vs single quotes
--	Escape Characters -> How to use \n \t to format your output and how to use single quotes inside a string. Mention raw strings (to not escape)
--	Multiline strings
+	<!--
 -	Indexing and slicing strings
 -	In vs “not in” checks (with if statetemnts)
 -	Lower(), upper(), islower(),….
