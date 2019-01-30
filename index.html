@@ -107,11 +107,121 @@
                 </p>
             </section>
             <!-- Manipulating Strings-->
-            <section title="Manipulating Strings">
+            <section title="String Basics">
                 <section>
-                    <h2>Manipulating Strings</h2>
+                    <h2>Let's review strings</h2>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> "This is a string"
+                        'This is a string'
+                        >>> 'This is also a string'
+                        'This is also a string'
+                        >>> "This string will not end'
+                        SyntaxError: EOL while scanning string literal
+                        </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <small>If you need to use single quotes within the string, it should be enclosed in double quotes, and vice versa.  <b>What if you need to use both?</b></small>
+                    </div>
                 </section>
             </section>
+            <section title="Escape Characters">
+                <section>
+                    <h2>Escape Characters</h2>
+                    <small><b>Escape characters</b> allow us to use characters that are otherwise impossible to put into a string.</small>
+                    <small>An <b>escape character</b> consists of a backslash (\) followed by the character you want to add to the string.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'Say hi to Bob\'s mother.'
+                        "Say hi to Bob's mother."
+                        >>> 'Say hi to Bob\'s "mother."'
+                        'Say hi to Bob\'s "mother."'
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Escape Characters</h2>
+                    <table style="font-size: 20px">
+                        <thead>
+                            <tr>
+                                <th>Escape character</th>
+                                <th>Prints as</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>\'</td>
+                                <td>Single quote</td>
+                            </tr>
+                            <tr>
+                                <td>\"</td>
+                                <td>Double quote</td>
+                            </tr>
+                            <tr>
+                                <td>\t</td>
+                                <td>Tab</td>
+                            </tr>
+                            <tr>
+                                <td>\n</td>
+                                <td>Newline (line break)</td>
+                            </tr>
+                            <tr>
+                                <td>\\</td>
+                                <td>Backslash (\)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Raw Strings</h2>
+                    <small>If you place an <i>r</i> before the beginning quotation mark of a string, it will be considered a <b>raw string</b></small>
+                    <small>This causes Python to ignore escape characters, and print any backslashes that appear in the string.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> print('That is Alice\'s cat.')
+                        That is Alice's cat.
+                        >>> print(r'That is Alice\'s cat.')
+                        That is Alice\'s cat.
+                        </code></pre>
+                    </div>
+                    <aside class="notes">
+                        - Raw strings are most helpful if you are typing string values that contain many backslashes.  Remember that for our next lesson!
+                    </aside>
+                </section>
+            </section>
+            <section title="Multiline Strings">
+                <section>
+                    <h2>Triple Quotes</h2>
+                    <small>The <i>\n</i> escape character is helpful for formatting long strings, but is an artifact of older programming languages.</small>
+                    <small>Python provides multiline strings, which are surrounded by either <b>three</b> single quotes or <b>three</b> double quotes.<small>
+                    <div class="fragment">
+                        <small>Try writing the following code:</small>
+                        <pre><code class="python" data-trim contenteditable>
+                        print('''Dear Alice,
+
+                        Eve's cat has been arrested for catnapping, cat burglary, and extortion.
+
+                        Sincerely,
+                        Bob''')</code></pre>
+                    </div>
+                </section>
+            </section>
+	<!--	
+-	Use this class to reiterate over modules and functions
+-	String literales/double quotes vs single quotes
+-	Escape Characters -> How to use \n \t to format your output and how to use single quotes inside a string. Mention raw strings (to not escape)
+-	Multiline strings
+-	Indexing and slicing strings
+-	In vs “not in” checks (with if statetemnts)
+-	Lower(), upper(), islower(),….
+-	Show the isX() methods and point to documentation and how to use it
+-	Show startswith(), endswith() etc
+-	Join() and split() -> EXERCISES (see project at end of chapter aout bullet points)
+-	Strip() -> introduce concept of Whitespace too
+-   format()
+-	PASSWORD PROJECT -> Homework?
+-	Practice questions and lots of “Time for Practice”-->
+
             <section>
                 <h2>Thank you!!</h2>
             </section>
