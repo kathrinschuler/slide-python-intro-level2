@@ -194,7 +194,7 @@
                     <h4>HTML Elements</h4>
                     <small>Every HTML web page is built using building blocks, the so called "HTML Elements".
                         Those elements are opened using &lt;&gt; and closed using &lt;/&gt;. They can enclose some text.
-                        There can also be so-called attributes that define the element further.</small>
+                        There can also be attributes that define the element further.</small>
                       <pre><code class="html" data-trim contenteditable>
                           <body>
                           <p>This is a paragraph</p>
@@ -223,8 +223,9 @@
                 <section>
                     <h4>1. Import your dependencies</h4>
                     <small><a href="http://docs.python-requests.org/en/master/">requests</a> is a Python library to get the content of a URL (amongst other things). We will use this to get our HTML file.
-                        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a> is a Python library for pulling data out of HTML and XML files.</small>
+                        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a> is a Python library for extracting data from HTML and XML files.</small>
                       <pre><code class="python" data-trim contenteditable>
+                          import sys # basic system library in python, used to exit the script prematurely
                           import requests
                           from bs4 import BeautifulSoup
                           from datetime import datetime  # We will use this to print the time of the scraping
@@ -257,10 +258,11 @@
                           resp = requests.get(url, stream=True, proxies=proxy_dict)
                           if resp.status_code != 200: # 200 means success
                               print("ERROR! Could not get data from URL. Response: {}".format(resp))
-                              exit
+                              sys.exit(1) # exit prematurely because we could not get data
                           else:
                               raw_html = resp.content
                         </code></pre>
+                        <small>Full list of status codes <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">here</a> (Funny bonus: read about status 418).</small>
                 </section>
                 <section>
                     <h4>4. Inspect your data </h4>
@@ -309,11 +311,11 @@
                             </tr>
                             <tr>
                                 <td>soup.select('#author')</td>
-                                <td>Element with an id attribute called author</td>
+                                <td>Element with an 'id' attribute = 'author'</td>
                             </tr>
                             <tr>
                                 <td>soup.select('.notice')</td>
-                                <td>All element that use the 'class' attribute named 'notice'</td>
+                                <td>All element that use the 'class' attribute = 'notice'</td>
                             </tr>
                             <tr>
                                 <td>soup.select('div span')</td>
@@ -321,11 +323,11 @@
                             </tr>
                             <tr>
                                 <td>soup.select('input[name]')</td>
-                                <td>All elements named &lt;input&gt; that have a name attribute (with any value)</td>
+                                <td>All elements named &lt;input&gt; that have a 'name' attribute (with any value)</td>
                             </tr>
                          <tr>
                                 <td>soup.select('input[name=Kathrin]')</td>
-                                <td>All elements named &lt;input&gt; that have a name attribute = Kathrin</td>
+                                <td>All elements named &lt;input&gt; that have a 'name' attribute = 'Kathrin'</td>
                             </tr>
                         </tbody>
                     </table><br>
