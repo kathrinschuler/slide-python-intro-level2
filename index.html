@@ -405,14 +405,181 @@
                     <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
                 </p>
             </section>
-            </section>
 
             <!-- Working with Data-->
-            <section title="Working with Data">
+            <section title="Introduction to pandas">
                 <section>
-                    <h2>Working with Data</h2>
+                    <h3>Data processing with pandas</h3>
+                    <ul>
+                        <li>pandas is Python's data analysis library. It should make working with and manipulating datasets in Python easier.</li>
+                        <li>Inside pandas is two data stuctures: Series and DataFrame </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Some imports</h3>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            import pandas as pd
+                            import numpy as np
+                            import matplotlib.pyplot as plt
+                        </code>
+                    </pre>
+
+                    <ul>
+                        <li><code>numpy</code> is a powerful scientific computing library</li>
+                        <li><code>pandas</code> implementation often needs <code>numpy</code> so you should import both</li>
+                        <li><code>matplotlib.pyplot</code>  is for plotting data</li>
+                        <li>The import abbreviations are conventions</li>
+                    </ul>
                 </section>
             </section>
+
+            <section title="Series">
+                <section>
+                    <h3>Series</h3>
+                    <small>Use for one dimensional data (e.g. a time series or a column of data). Try it out!</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            import random
+                            data = random.sample(range(10), 10)
+                            ts = pd.Series(data)
+                        </code>
+                    </pre>
+                    <ul>
+                        <li>Here, we generate a list of random numbers as dummy data</li>
+                        <li>Notice that <code>pandas</code> indexes the data for you as the integer 0..N </li>
+                    </ul>
+
+                </section>
+
+                <section>
+                    <h3> Indexing</h3>
+                    <small> Try it out! </small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            ts[6]
+                            print(type(ts[6]))
+                            ts[3:8]
+                            print(type(ts[3:8]))
+                            ts[ts>7]
+                        </code>
+                    </pre>
+                    <small>Add a value to the Series as follows.</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            ts[10]=4
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3> DatetimeIndex </h3>
+                    <small>We don't need to use numbers as the index. We could use a list of strings, for example. But what if the date represents a time series?</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            start = datetime(2018, 1, 1)
+                            end = datetime(2018, 1, 10)
+                            date_range = pd.date_range(start,end)
+                            date_range
+                            ts = pd.Series(data,index=(date_range))
+                        </code>
+                    </pre>q
+                </section>
+
+                <section>
+                    <h3> Plotting </h3>
+                    <small> Try it out! </small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            ts.plot()
+                        </code>
+                    </pre>
+                </section>
+
+            </section>
+
+
+            <section title="DataFrame">
+                <section>
+                    <h3>DataFrame</h3>
+                    <small>Tabular data structure comprised of rows and columns (e.g. spreadsheet, database table)</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            data = {'red': random.sample(range(10), 10),
+                                    'blue': random.sample(range(10), 10),
+                                    'green': random.sample(range(10), 10)}
+                            df = pd.DataFrame(data)
+                        </code>
+                    </pre>
+                    <small>The keys of the dictionary have become the column name of the DataFrame.
+                        Much like Series the index defaulted to 0...N.
+                        But, this can be set by passing in an "<code>index=</code>" argument.
+                    </small>
+                </section>
+
+                <section>
+                    <h3>Indexing by column</h3>
+                    <small> We index by the column first, and then the row. </small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            value = df['blue'][5]
+                        </code>
+                    </pre>
+                    <small> Can extract a column. A column in a pandas DataFrame is pandas Series. </small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            column = df['red']
+                        </code>
+                    </pre>
+                    <small> Can select multiple columns by using a list of the relevant column names. This will return a DataFrame.</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            multiple_columns = df[['red', 'blue']]
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Indexing by row</h3>
+                    <small> Select rows using <code>.loc[]</code>, which gets rows by index.
+                        There is also <code>iloc[]</code>, which gets rows by position (and hence only takes an integer).
+                        A row is a pandas Series.</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df.loc[5]
+                        </code>
+                    </pre>
+                    <small>Select multiple rows by passing a list to <code>loc</code></small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df.loc[[3,6,9]]
+                        </code>
+                    </pre>
+                </section>
+
+            </section>
+
+
+            <section title="Data analysis worked example">
+                <section>
+                    <h2>Importing data</h2>
+                </section>
+
+                <section>
+                    <h3>Blank slide **remove**</h3>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+
+                        </code>
+                    </pre>
+                </section>
+
+            </section>
+
+
+
+
+
             <section>
                 <h2>Thank you!!</h2>
             </section>
