@@ -255,13 +255,78 @@
                 </section>
                 <section>
                     <h2>Check if a value exists</h2>
-                    <small>Just like in a list, you can check for the existence of a value within a string using the <b>in</b> keyword.</small>
+                    <small>Just like in a list, you can check for the existence of a value within a string using the <b>in</b> and <b>not in</b> keywords.</small>
+                    <small>This will evaluate to a boolean value; either True or False.  The check is literal, for the exact string, and case-sensitive.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'Hello' in 'Hello World'
+                        True
+                        >>> 'Hello' in 'Hello'
+                        True
+                        >>> 'HELLO' in 'Hello World'
+                        False
+                        >>> '' in 'spam'
+                        True
+                        >>> 'cats' not in 'cats and dogs'
+                        False</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section title='Object Methods'>
+                <section>
+                    <h1>INTRODUCE OBJECTS AND THEIR METHODS</h1>
+                </section>
+            </section>
+            <section title='Case Sensitivity'>
+                <section>
+                    <h2>Case Manipulation</h2>
+                    <small>Python provides helpful methods on string objects to convert between cases. <b>upper()</b> and <b>lower()</b>.will return a new string with every character converted to the desired case.  This can be very helpful when trying to make case-insensitive comparisons.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> spam = 'Hello world!'
+                        >>> spam = spam.upper()
+                        >>> spam
+                        'HELLO WORLD!'
+                        >>> spam = spam.lower()
+                        >>> spam
+                        'hello world!'</code></pre>
+                    </div>
+                    <aside class="notes">Note that the methods return a new string, rather than modifying the string in-place.  If you want to replace the same variable, you will have to assign the return value back to it</aside>
+                </section>
+                <section>
+                    <h2>Case Manipulation</h2>
+                    <small>The <b>upper()</b> and <b>lower()</b> methods are especially useful when trying to make case-insensitive comparisons.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        feeling = input('How are you? ')
+                        if feeling.lower() == 'great':
+                            print('I feel great too.')
+                        else:
+                            print('I hope the rest of your day is good.')</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Case Verification</h2>
+                    <small>If you do want to be case-sensitive, there are also the methods <b>isupper()</b> and <b>islower()</b>.  These return a boolean value of True or False to indicate whether the entire string is uppercase or lowercase, respectively.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> spam = 'Hello world!'
+                        >>> spam.islower()
+                        False
+                        >>> spam.isupper()
+                        False
+                        >>> 'HELLO'.isupper()
+                        True
+                        >>> 'abc12345'.islower()
+                        True
+                        >>> '12345'.islower()
+                        False
+                        >>> '12345'.isupper()
+                        False</code></pre>
+                    </div>
                 </section>
             </section>
 	<!--
--	Indexing and slicing strings
--	In vs “not in” checks (with if statetemnts)
--	Lower(), upper(), islower(),….
 -	Show the isX() methods and point to documentation and how to use it
 -	Show startswith(), endswith() etc
 -	Join() and split() -> EXERCISES (see project at end of chapter aout bullet points)
