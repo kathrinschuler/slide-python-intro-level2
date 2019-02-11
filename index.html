@@ -30,86 +30,89 @@
     </script>
 
     <!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <!-- Intro Slide -->
+<div class="reveal">
+    <div class="slides">
+        <!-- Intro Slide -->
+        <section>
+            <h1>Learn more Python</h1>
+            <h3>Lessons 1-6</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
+
+        <!-- Lessons Slide -->
+        <section>
+            <h3><a href="#/lesson-1">Lesson 1</a></h3>
+            <h3><a href="#/lesson-2">Lesson 2</a></h3>
+            <h3><a href="#/lesson-3">Lesson 3</a></h3>
+            <h3><a href="#/lesson-4">Lesson 4</a></h3>
+            <h3><a href="#/lesson-5">Lesson 5</a></h3>
+            <h3><a href="#/lesson-6">Lesson 6</a></h3>
+        </section>
+
+        <!-- About us -->
+        <section>
             <section>
-                <h1>Learn more Python</h1>
-                <h3>Lessons 1-6</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
-            </section>
-
-            <!-- Lessons Slide -->
-            <section>
-                <h3><a href="#/lesson-1">Lesson 1</a></h3>
-                <h3><a href="#/lesson-2">Lesson 2</a></h3>
-                <h3><a href="#/lesson-3">Lesson 3</a></h3>
-                <h3><a href="#/lesson-4">Lesson 4</a></h3>
-                <h3><a href="#/lesson-5">Lesson 5</a></h3>
-                <h3><a href="#/lesson-6">Lesson 6</a></h3>
-            </section>
-
-            <!-- About us -->
-            <section>
-                <section>
-                    <h2>About us</h2>
-                </section>
-                <section>
-                    <h2>Kathrin Schuler</h2>
-                    <p>Financial Software Developer at Bloomberg</p>
-                    <br>
-                </section>
-                 <section>
-                    <h2>Natalie Keating</h2>
-                    <p>Financial Software Developer at Bloomberg</p>
-                    <br>
-                </section>
-                <section>
-                    <h2>Tucker Vento</h2>
-                    <p>System Reliability Engineer at Bloomberg</p>
-                    <br>
-                </section>
-            </section>
-
-            <!-- Intro Slide Lesson 1-->
-            <section id="lesson-1">
-
-                <h1>Learn more Python</h1>
-                <h3>Lesson 1</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
-            </section>
-
-            <!-- Continuing your journey -->
-            <section title="Continue where we left off">
-                <section>
-                    <h2>Continue where we left off...</h2>
-                </section>
+                <h2>About us</h2>
             </section>
             <section>
-                <h2>Thank you!!</h2>
+                <h2>Kathrin Schuler</h2>
+                <p>Financial Software Developer at Bloomberg</p>
+                <br>
             </section>
+            <section>
+                <h2>Natalie Keating</h2>
+                <p>Financial Software Developer at Bloomberg</p>
+                <br>
+            </section>
+            <section>
+                <h2>Tucker Vento</h2>
+                <p>System Reliability Engineer at Bloomberg</p>
+                <br>
+            </section>
+        </section>
 
-            <!-- Lesson 2 -->
-            <section id="lesson-2">
-                <h1>Learn more Python</h1>
-                <h3>Lesson 2</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
+        <!-- Intro Slide Lesson 1-->
+        <section id="lesson-1">
+
+            <h1>Learn more Python</h1>
+            <h3>Lesson 1</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
+
+        <!-- Continuing your journey -->
+        <section title="Continue where we left off">
+            <section>
+                <h2>Continue where we left off...</h2>
             </section>
-            <!-- Manipulating Strings-->
-            <section title="String Basics">
-                <h2>Let's review strings</h2>
-                <div class="fragment">
+        </section>
+        <section>
+            <h2>Thank you!!</h2>
+        </section>
+
+        <!-- Lesson 2 -->
+        <section id="lesson-2">
+            <h1>Learn more Python</h1>
+            <h3>Lesson 2</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
+        <!-- Manipulating Strings-->
+        <section title="String Basics">
+            <h2>Let's review strings</h2>
+            <div class="fragment">
                 <pre><code class="python" data-trim contenteditable>
                 >>> "This is a string"
                 'This is a string'
@@ -118,128 +121,149 @@
                 >>> "This string will not end'
                 SyntaxError: EOL while scanning string literal
                 </code></pre>
-                </div>
+            </div>
+            <div class="fragment">
+                <small>If you need to use single quotes within the string, it should be enclosed in double quotes, and
+                    vice versa. <b>What if you need to use both?</b></small>
+            </div>
+        </section>
+        <section title="Escape Characters">
+            <section>
+                <h3>Escape Characters</h3>
+                <small><b>Escape characters</b> allow us to use characters that are otherwise impossible to put into a
+                    string.
+                </small>
+                <small>An <b>escape character</b> consists of a backslash (\) followed by the character you want to add
+                    to the string.
+                </small>
                 <div class="fragment">
-                <small>If you need to use single quotes within the string, it should be enclosed in double quotes, and vice versa.  <b>What if you need to use both?</b></small>
-                </div>
-            </section>
-            <section title="Escape Characters">
-                <section>
-                    <h3>Escape Characters</h3>
-                    <small><b>Escape characters</b> allow us to use characters that are otherwise impossible to put into a string.</small>
-                    <small>An <b>escape character</b> consists of a backslash (\) followed by the character you want to add to the string.</small>
-                    <div class="fragment">
                         <pre><code class="python" data-trim contenteditable>
                         >>> 'Say hi to Bob\'s mother.'
                         "Say hi to Bob's mother."
                         >>> 'Say hi to Bob\'s "mother."'
                         'Say hi to Bob\'s "mother."'
                         </code></pre>
-                    </div>
-                </section>
-                <section>
-                    <h3>Escape Characters</h3>
-                    <table style="font-size: 20px">
-                        <thead>
-                            <tr>
-                                <th>Escape character</th>
-                                <th>Prints as</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>\'</td>
-                                <td>Single quote</td>
-                            </tr>
-                            <tr>
-                                <td>\"</td>
-                                <td>Double quote</td>
-                            </tr>
-                            <tr>
-                                <td>\t</td>
-                                <td>Tab</td>
-                            </tr>
-                            <tr>
-                                <td>\n</td>
-                                <td>Newline (line break)</td>
-                            </tr>
-                            <tr>
-                                <td>\\</td>
-                                <td>Backslash (\)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section>
-                    <h3>Raw Strings</h3>
-                    <small>If you place an <i>r</i> before the beginning quotation mark of a string, it will be considered a <b>raw string</b></small>
-                    <small>This causes Python to ignore escape characters, and print any backslashes that appear in the string.</small>
-                    <div class="fragment">
+                </div>
+            </section>
+            <section>
+                <h3>Escape Characters</h3>
+                <table style="font-size: 20px">
+                    <thead>
+                    <tr>
+                        <th>Escape character</th>
+                        <th>Prints as</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>\'</td>
+                        <td>Single quote</td>
+                    </tr>
+                    <tr>
+                        <td>\"</td>
+                        <td>Double quote</td>
+                    </tr>
+                    <tr>
+                        <td>\t</td>
+                        <td>Tab</td>
+                    </tr>
+                    <tr>
+                        <td>\n</td>
+                        <td>Newline (line break)</td>
+                    </tr>
+                    <tr>
+                        <td>\\</td>
+                        <td>Backslash (\)</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h3>Raw Strings</h3>
+                <small>If you place an <i>r</i> before the beginning quotation mark of a string, it will be considered a
+                    <b>raw string</b></small>
+                <small>This causes Python to ignore escape characters, and print any backslashes that appear in the
+                    string.
+                </small>
+                <div class="fragment">
                         <pre><code class="python" data-trim contenteditable>
                         >>> print('That is Alice\'s cat.')
                         That is Alice's cat.
                         >>> print(r'That is Alice\'s cat.')
                         That is Alice\'s cat.
                         </code></pre>
-                    </div>
-                    <aside class="notes">
-                        - Raw strings are most helpful if you are typing string values that contain many backslashes.  Remember that for our next lesson!
-                    </aside>
-                </section>
+                </div>
+                <aside class="notes">
+                    - Raw strings are most helpful if you are typing string values that contain many backslashes.
+                    Remember that for our next lesson!
+                </aside>
             </section>
-            <section title="Multiline Strings">
-                <section>
-                    <h3>Triple Quotes</h3>
-                    <small>The \n escape character is helpful for formatting long strings, but is an artifact of older programming languages.</small>
-                    <small>Python provides multiline strings, which are surrounded by either <b>three</b> single quotes or <b>three</b> double quotes.</small>
-                    <div class="fragment">
-                        <small>Try writing the following code:</small>
-                        <pre><code class="python" data-trim contenteditable>
+        </section>
+        <section title="Multiline Strings">
+            <section>
+                <h3>Triple Quotes</h3>
+                <small>The \n escape character is helpful for formatting long strings, but is an artifact of older
+                    programming languages.
+                </small>
+                <small>Python provides multiline strings, which are surrounded by either <b>three</b> single quotes or
+                    <b>three</b> double quotes.
+                </small>
+                <div class="fragment">
+                    <small>Try writing the following code:</small>
+                    <pre><code class="python" data-trim contenteditable>
                         print('''Dear Alice,
 
                         Eve's cat has been arrested for catnapping, cat burglary, and extortion.
 
                         Sincerely,
                         Bob''')</code></pre>
-                    </div>
-                </section>
-                <section>
-                    <h3>Multiline Comments</h3>
-                    <small>Remember that we use the # character to mark the beginning of a comment for the remainder of a line.</small>
-                    <div class="fragment">
-                        <small>A multiline string is often used for comments that span multiple lines.  The following is valid and acceptable Python code:</small>
-                        <pre><code class="python" data-trim contenteditable>
+                </div>
+            </section>
+            <section>
+                <h3>Multiline Comments</h3>
+                <small>Remember that we use the # character to mark the beginning of a comment for the remainder of a
+                    line.
+                </small>
+                <div class="fragment">
+                    <small>A multiline string is often used for comments that span multiple lines. The following is
+                        valid and acceptable Python code:
+                    </small>
+                    <pre><code class="python" data-trim contenteditable>
                         def spam():
                             """This is a multiline comment to document
                             the purpose of the spam() function.
                             
                             It's to print spam."""
                             print('Hello!')</code></pre>
-                    </div>
-                </section>
+                </div>
             </section>
-            <section title="Indexing, Slicing, and 'in'">
-                <section>
-                    <h3>Indexing in Lists</h3>
-                    <small>Recall that the items in a list can be referred to using 'indices' or 'indexes'.</small>
-                    <pre><code class="python" data-trim contenteditable>
+        </section>
+        <section title="Indexing, Slicing, and 'in'">
+            <section>
+                <h3>Indexing in Lists</h3>
+                <small>Recall that the items in a list can be referred to using 'indices' or 'indexes'.</small>
+                <pre><code class="python" data-trim contenteditable>
                     >>> my_list = ['Hello', 'world', '!']
                     >>> my_list[0]
                     'Hello'
                     >>> my_list[1:]
-                    ['world', '!']</pre></code>
-                </section>
-                <section>
-                    <h3>Indexing in Strings</h3>
-                    <small>Strings are <i>'indexed'</i> in the same manner as lists.</small>
-                    <br/><small>That means you can access the individual characters in the string by referring to their position within the string.</small>
-                    <div class="fragment">
-                        <small>Let's consider the string "Hello world!":</small>
-                        <pre><code data-trim contenteditable>
+                    ['world', '!']</pre>
+                </code>
+            </section>
+            <section>
+                <h3>Indexing in Strings</h3>
+                <small>Strings are <i>'indexed'</i> in the same manner as lists.</small>
+                <br/>
+                <small>That means you can access the individual characters in the string by referring to their position
+                    within the string.
+                </small>
+                <div class="fragment">
+                    <small>Let's consider the string "Hello world!":</small>
+                    <pre><code data-trim contenteditable>
                         '  H  e  l  l  o     w  o  r  l  d  !  '
                         #  0  1  2  3  4  5  6  7  8  9  10 11</code></pre>
-                    </div>
-                    <div class="fragment">
+                </div>
+                <div class="fragment">
                         <pre><code class="python" data-trim contenteditable>
                         >>> my_str = 'Hello world!'
                         >>> my_str[0]
@@ -251,13 +275,17 @@
                         >>> world = my_str[6:]
                         >>> world + my_str
                         'world!Hello world!'</code></pre>
-                    </div>
-                </section>
-                <section>
-                    <h3>Check if a value exists</h3>
-                    <small>Just like in a list, you can check for the existence of a value within a string using the <b>in</b> and <b>not in</b> keywords.</small>
-                    <small>This will evaluate to a boolean value; either True or False.  The check is literal, for the exact string, and case-sensitive.</small>
-                    <div class="fragment">
+                </div>
+            </section>
+            <section>
+                <h3>Check if a value exists</h3>
+                <small>Just like in a list, you can check for the existence of a value within a string using the
+                    <b>in</b> and <b>not in</b> keywords.
+                </small>
+                <small>This will evaluate to a boolean value; either True or False. The check is literal, for the exact
+                    string, and case-sensitive.
+                </small>
+                <div class="fragment">
                         <pre><code class="python" data-trim contenteditable>
                         >>> 'Hello' in 'Hello World'
                         True
@@ -269,19 +297,22 @@
                         True
                         >>> 'cats' not in 'cats and dogs'
                         False</code></pre>
-                    </div>
-                </section>
+                </div>
             </section>
-            <section title='Object Methods'>
-                <section>
-                    <h1>INTRODUCE OBJECTS AND THEIR METHODS</h1>
-                </section>
+        </section>
+        <section title='Object Methods'>
+            <section>
+                <h1>INTRODUCE OBJECTS AND THEIR METHODS</h1>
             </section>
-            <section title='Case Sensitivity'>
-                <section>
-                    <h3>Case Manipulation</h3>
-                    <small>Python provides helpful methods on string objects to convert between cases. <b>upper()</b> and <b>lower()</b>.will return a new string with every character converted to the desired case.  This can be very helpful when trying to make case-insensitive comparisons.</small>
-                    <div class="fragment">
+        </section>
+        <section title='Case Sensitivity'>
+            <section>
+                <h3>Case Manipulation</h3>
+                <small>Python provides helpful methods on string objects to convert between cases. <b>upper()</b> and
+                    <b>lower()</b>.will return a new string with every character converted to the desired case. This can
+                    be very helpful when trying to make case-insensitive comparisons.
+                </small>
+                <div class="fragment">
                         <pre><code class="python" data-trim contenteditable>
                         >>> spam = 'Hello world!'
                         >>> spam = spam.upper()
@@ -290,25 +321,33 @@
                         >>> spam = spam.lower()
                         >>> spam
                         'hello world!'</code></pre>
-                    </div>
-                    <aside class="notes">Note that the methods return a new string, rather than modifying the string in-place.  If you want to replace the same variable, you will have to assign the return value back to it</aside>
-                </section>
-                <section>
-                    <h3>Case Manipulation</h3>
-                    <small>The <b>upper()</b> and <b>lower()</b> methods are especially useful when trying to make case-insensitive comparisons.</small>
-                    <div class="fragment">
+                </div>
+                <aside class="notes">Note that the methods return a new string, rather than modifying the string
+                    in-place. If you want to replace the same variable, you will have to assign the return value back to
+                    it
+                </aside>
+            </section>
+            <section>
+                <h3>Case Manipulation</h3>
+                <small>The <b>upper()</b> and <b>lower()</b> methods are especially useful when trying to make
+                    case-insensitive comparisons.
+                </small>
+                <div class="fragment">
                         <pre><code class="python" data-trim contenteditable>
                         feeling = input('How are you? ')
                         if feeling.lower() == 'great':
                             print('I feel great too.')
                         else:
                             print('I hope the rest of your day is good.')</code></pre>
-                    </div>
-                </section>
-                <section>
-                    <h3>Case Verification</h3>
-                    <small>If you do want to be case-sensitive, there are also the methods <b>isupper()</b> and <b>islower()</b>.  These return a boolean value of True or False to indicate whether the entire string is uppercase or lowercase, respectively.</small>
-                    <div class="fragment">
+                </div>
+            </section>
+            <section>
+                <h3>Case Verification</h3>
+                <small>If you do want to be case-sensitive, there are also the methods <b>isupper()</b> and
+                    <b>islower()</b>. These return a boolean value of True or False to indicate whether the entire
+                    string is uppercase or lowercase, respectively.
+                </small>
+                <div class="fragment">
                         <pre><code class="python" data-trim contenteditable>
                         >>> spam = 'Hello world!'
                         >>> spam.islower()
@@ -323,102 +362,373 @@
                         False
                         >>> '12345'.isupper()
                         False</code></pre>
-                    </div>
-                </section>
+                </div>
             </section>
-	<!--
--	Show the isX() methods and point to documentation and how to use it
--	Show startswith(), endswith() etc
--	Join() and split() -> EXERCISES (see project at end of chapter aout bullet points)
--	Strip() -> introduce concept of Whitespace too
--   format()
--	PASSWORD PROJECT -> Homework?
--	Practice questions and lots of “Time for Practice”-->
+        </section>
+        <!--
+    -	Show the isX() methods and point to documentation and how to use it
+    -	Show startswith(), endswith() etc
+    -	Join() and split() -> EXERCISES (see project at end of chapter aout bullet points)
+    -	Strip() -> introduce concept of Whitespace too
+    -   format()
+    -	PASSWORD PROJECT -> Homework?
+    -	Practice questions and lots of “Time for Practice”-->
 
+        <section>
+            <h2>Thank you!!</h2>
+        </section>
+
+        <!-- LESSON 3 -->
+        <section id="lesson-3">
+            <h1>Learn more Python</h1>
+            <h3>Lesson 3</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
+
+        </section>
+        <!-- Regex-->
+        <section title="Regex">
             <section>
-                <h2>Thank you!!</h2>
+                <h2>Pattern Matching with Regular Expressions</h2>
             </section>
+        </section>
 
-            <!-- LESSON 3 -->
-            <section id="lesson-3">
-                <h1>Learn more Python</h1>
-                <h3>Lesson 3</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
-            </section>
-
-            </section>
-            <!-- Regex-->
-            <section title="Regex">
-                <section>
-                    <h2>Regular Expressions</h2>
-                </section>
-            </section>
-
-
+        <section>
             <section>
-                <h2>Thank you!!</h2>
-            </section>
-
-            <!-- LESSON 4 -->
-            <section id="lesson-4">
-                <h1>Learn more Python</h1>
-                <h3>Lesson 4</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
-            </section>
-
-            </section>
-            <!-- Solving your problems-->
-            <section title="Solving your problems">
-                <section>
-                    <h2>Solving your problems</h2>
-                </section>
+                <h4>What is a Regular Expression?</h4>
+                <small>You may be familiar with searching for text by pressing CTRL-F and typing in the words you’re
+                    looking for.
+                    Regular expressions go one step further: They allow you to specify a pattern of text to search for.
+                </small>
+                <br><br>
+                <div class="fragment">
+                    <small>Examples are:
+                        <ul>
+                            <li>Phone numbers: If you live in the US you know it will be 3 digits followed by a hyphen,
+                                followed by 4 more digits and maybe an area code (415-555-6789)
+                            </li>
+                            <li>Email addresses: You know it will be some characters, followed by the @ sign, followed
+                                by characters, a dot and some ending (john_smith@gmail.com)
+                            </li>
+                        </ul>
+                    </small>
+                    <br><br></div>
+                <div class="fragment">
+                    <small><font color="#006400"><q>Knowing regular expressions can mean the difference between solving
+                        a problem in 3 steps and solving it in 3,000 steps.</q></font></small>
+                    <br><br>
+                </div>
+                <div class="fragment">
+                    <small>Notepad++ and other (decent) text editors support search and replacing by regular expression.
+                    </small>
+                </div>
             </section>
             <section>
-                <h2>Thank you!!</h2>
+                <small>We will start by writing a program to find text patterns without using regular expressions
+                    and then see how to use regular expressions to make the code much less bloated.
+                </small>
             </section>
 
-             <!-- LESSON 5 -->
-            <section id="lesson-5">
-                <h1>Learn more Python</h1>
-                <h3>Lesson 5</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
+        </section>
+        <section>
+            <section>
+                <h4>Detecting a phone number</h4>
+                <small>... without Regex!</small>
+                <small>You know the pattern: three numbers, a hyphen, three numbers, a hyphen, and four numbers.</small>
+                <pre><code class="python" data-trim contenteditable>
+                        def isPhoneNumber(text):
+                            if len(text) != 12:
+                                return False
+                            for i in range(0, 3):
+                                if not text[i].isdecimal():
+                                    return False
+                            if text[3] != '-':
+                                return False
+                            for i in range(4, 7):
+                                if not text[i].isdecimal():
+                                    return False
+                            if text[7] != '-':
+                                return False
+                            for i in range(8, 12):
+                                if not text[i].isdecimal():
+                                    return False
+                            return True
+
+                    </code> </pre>
             </section>
+            <section>
+                <small>We can call this function now with a valid phone number, and an invalid one:</small>
+                <pre><code class="python" data-trim contenteditable>
+                       print('415-555-4242 is a phone number:')
+                       print(isPhoneNumber('415-555-4242'))
+                       print('Moshi moshi is a phone number:')
+                       print(isPhoneNumber('Moshi moshi'))</code></pre>
+                <div class="fragment">
+                     <pre><code class="python" data-trim contenteditable>
+                       415-555-4242 is a phone number:
+                       True
+                       Moshi moshi is a phone number:
+                       False</code></pre>
+                </div>
+                <div class="fragment">
+                    <small>Imagine how much more code you would need to add to find all the phone numbers in a text.
+                    </small>
+                </div>
+            </section>
+            <section>
+                <p>The functionality of this code is very limited...</p>
+                <div class="fragment">
+                    <small>What if phone numbers in the text are formatted like (415) 555-1234 or 415.555.1234?</small>
+                </div>
+                <div class="fragment">
+                    <small><code>isPhoneNumber()</code> would return False even though it is a phone number!</small>
+                </div>
+                <div class="fragment">
+                    <small>...and adding more code to cover all those cases would make the function much less readable
+                    </small>
+                </div>
             </section>
 
-            <!-- WebScraping-->
-            <section title="Webscraping">
-                <section>
-                    <h2>Webscraping</h2>
-                </section>
+        </section>
+        <section>
+            <section>
+                <h3>Regular Expressions</h3>
+                <p>in short <q>RegEx</q></p>
+                <div class="fragment">
+                    <small>Regular expressions are descriptions for a pattern of text.
+                        For example, a <code>\d</code> in a regex stands for a digit character—that is, any single
+                        numeral 0 to 9.
+                        The regex <code>\d\d\d-\d\d\d-\d\d\d\d</code> is used by Python to match the same text the
+                        previous <code>isPhoneNumber()</code> function did:
+                        a string of three numbers, a hyphen, three more numbers, another hyphen, and four numbers.
+                    </small>
+                </div>
             </section>
+            <section>
+                <p>RegExes can be much more powerful:</p>
+                <small>For example we can add <code>{3}</code> after the <code>\d</code> to repeat it 3 times.
+                    This leads us to a slightly shorter regex that also matches the phone number format:
+                </small>
+                <br><br>
+                <small><code>\d{3}-\d{3}-\d{4}</code></small>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Regex in Python</h3>
+                <pre><code class="python" data-trim contenteditable>
+                    import re #This is the regex module
+                </code></pre>
+                <small>Always remember to import this module. Otherwise you'll get error messages that re is not
+                    defined.
+                </small>
+            </section>
+            <section>
+                <small>First, we need to create a regex object. This is done as follows:</small>
+                <pre><code class="python" data-trim contenteditable>
+                     phoneNumberRegex = re.compile('\d{3}-\d{3}-\d{4}')
+                </code></pre>
+                <div class="fragment">
+                    <small>Then we can search for the first match using the regex object:</small>
+                    <pre><code class="python" data-trim contenteditable>
+                     # search returns the FIRST match.
+                     >>> text = "Susan's number is 415-555-3344 and mine is 123-333-4455"
+                     >>> matches = phoneNumberRegex.search(text)
+                     >>> phone_number = matches.group()
+                       '415-555-1234'
+                </code></pre>
+                </div>
+                <div class="fragment">
+                    <small>Alternatively we can find all matches:</small>
+                    <pre><code class="python" data-trim contenteditable>
+                     # findall returns ALL matches as a list
+                     >>> all_matches = phoneNumberRegex.findall(text)
+                     >>> all_matches
+                       ['415-555-1234', '123-333-4455']
+                </code></pre>
+                </div>
+            </section>
+            <section>
+                <h3>Review</h3>
+                <small>
+                    <ol>
+                        <li>Import the regex module with <code>import re</code></li>
+                        <li>Create a Regex object with the <code>re.compile()</code> function. (Remember to use a
+                            string.)
+                        </li>
+                        <li>Pass the string you want to search into the Regex object’s <code>search()/findall()</code>
+                            method. This returns a Match object for <code>search()</code> and a list for
+                            <code>findall()</code></li>
+                        <li>If you used <code>search()</code>, call the Match object’s <code>group()</code> method to
+                            return a string of the actual matched text.
+                        </li>
+                    </ol>
+                </small>
+                <br><br>
+                <small>You can also test your regex <a href="https://regex101.com/">here</a>. Make sure you select
+                    Python!
+                </small>
+            </section>
+        </section>
 
-            <section title="HTML">
-                <section>
-                    <h3>Quick Introduction to HTML</h3>
-                </section>
-                <section>
-                    <p>Hypertext Markup Language (HTML) is the format that web pages are written in.
-                        You can find some beginner tutorials here: <br><br>
+        <section>
+            <section>
+                <h3>More Patterns</h3>
+            </section>
+            <section>
+                <h4>Groups</h4>
+                <small>Say you want to separate the area code from the rest of the phone number.
+                    Adding parentheses will create groups in the regex: <code>(\d\d\d)-(\d\d\d-\d\d\d\d)</code>.
+                    Then you can use the <code>group()</code> match object method to grab the matching text from just
+                    one group.
+                </small>
+                <div class="fragment">
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Susan's phone number is 415-555-3344 and mine is 123-333-4455"
+                     >>> phoneNumberRegex = re.compile('(\d\d\d)-(\d\d\d-\d\d\d\d)')
+                     >>> matches = phoneNumberRegex.search(text)
+                     >>> phone_number = matches.group(1)  # Index 1 returns the first group of parenthesis
+                       '415'
+                     >>> phone_number = matches.group(2)  # Second group of parentheses
+                       '555-3344'
+                     >>> phone_number = matches.group(0)  # passing 0 or nothing will return the whole matched string
+                       '415-555-3344'
+                </code></pre>
+                </div>
+            </section>
+            <section>
+                <small>Similarly when you want to use the <code>findall()</code> function</small>
+                <div class="fragment">
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Susan's phone number is 415-555-3344 and mine is 123-333-4455"
+                     >>> phoneNumberRegex = re.compile('(\d{3})-(\d{3}-\d{4})')
+                     >>> matches = phoneNumberRegex.findall(text)
+                     >>> matches
+                       [('415', '555-3344'), ('123', '333-4455')]
+                     >>> matches[0][1]
+                       '555-3344'
+                </code></pre>
+                </div>
+                <div class="fragment">
+                    <small>Notice that the code above does not return the full phone number.
+                        If you are using groups and you still want the full match to be returned you need to wrap
+                        everything into a group:
+                    </small>
+                    <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Susan's phone number is 415-555-3344 and mine is 123-333-4455"
+                     >>> phoneNumberRegex = re.compile('((\d{3})-(\d{3}-\d{4}))')
+                     >>> matches = phoneNumberRegex.findall(text)
+                     >>> matches
+                       [('415-555-3344', '415', '555-3344'), ('123-333-4455', '123', '333-4455')]
+                </code></pre>
+                </div>
+                <!--<div class="fragment">-->
+                <!--<small>The \( and \) escape characters in the raw string passed to <code>re.compile()</code> will match actual parenthesis characters.</small>-->
+                <!--</div>-->
+            </section>
+            <section>
+                <h4>Pipe (the <q>or</q> matching)</h4>
+                <small>Assuming you allow different characters at a single place,
+                    for example you'd like to match batman, batmobile, batwoman and batcopter.
+                    For that we can use the | (<q>pipe</q> character):
+                </small>
+                <div class="fragment">
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Batman and Batwoman were driving a Batmobile"
+                     >>> phoneNumberRegex = re.compile('Bat(man|woman|mobile|copter)')
+                     >>> matches = phoneNumberRegex.search(text)
+                     >>> matches.group()
+                       'Batman'
+                </code></pre>
+                </div>
+                <div class="fragment">
+                    <small>In case you want to use the findall() function (Remember to wrap it in a group if you want
+                        the full match)
+                    </small>
+                    <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Batman and Batwoman were driving a Batmobile"
+                     >>> phoneNumberRegex = re.compile('(Bat(man|woman|mobile|copter))')
+                     >>> matches = phoneNumberRegex.findall(text)
+                     >>> matches
+                       [('Batman', 'man'), ('Batwoman', 'woman'), ('Batmobile', 'mobile')]
+                </code></pre>
+                </div>
+            </section>
+            <section>
+
+            </section>
+        </section>
+
+
+        <section>
+            <h2>Thank you!!</h2>
+        </section>
+
+        <!-- LESSON 4 -->
+        <section id="lesson-4">
+            <h1>Learn more Python</h1>
+            <h3>Lesson 4</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
+
+        </section>
+        <!-- Solving your problems-->
+        <section title="Solving your problems">
+            <section>
+                <h2>Solving your problems</h2>
+            </section>
+        </section>
+        <section>
+            <h2>Thank you!!</h2>
+        </section>
+
+        <!-- LESSON 5 -->
+        <section id="lesson-5">
+            <h1>Learn more Python</h1>
+            <h3>Lesson 5</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
+        </section>
+
+        <!-- WebScraping-->
+        <section title="Webscraping">
+            <section>
+                <h2>Webscraping</h2>
+            </section>
+        </section>
+
+        <section title="HTML">
+            <section>
+                <h3>Quick Introduction to HTML</h3>
+            </section>
+            <section>
+                <p>Hypertext Markup Language (HTML) is the format that web pages are written in.
+                    You can find some beginner tutorials here: <br><br>
 
                     <a href="http://htmldog.com/guides/html/beginner/">http://htmldog.com/guides/html/beginner/</a><br>
 
                     <a href="https://www.w3schools.com/whatis/whatis_html.asp">https://www.w3schools.com/whatis/whatis_html.asp</a><br>
 
-                    <a href="https://developer.mozilla.org/en-US/learn/html/">https://developer.mozilla.org/en-US/learn/html/</a></p>
-                </section>
+                    <a href="https://developer.mozilla.org/en-US/learn/html/">https://developer.mozilla.org/en-US/learn/html/</a>
+                </p>
+            </section>
 
-                <section>
-                    <h4>HTML Elements</h4>
-                    <small>Every HTML web page is built using building blocks, the so called "HTML Elements".
-                        Those elements are opened using &lt;&gt; and closed using &lt;/&gt;. They can enclose some text.
-                        There can also be attributes that define the element further.</small>
-                      <pre><code class="html" data-trim contenteditable>
+            <section>
+                <h4>HTML Elements</h4>
+                <small>Every HTML web page is built using building blocks, the so called "HTML Elements".
+                    Those elements are opened using &lt;&gt; and closed using &lt;/&gt;. They can enclose some text.
+                    There can also be attributes that define the element further.
+                </small>
+                <pre><code class="html" data-trim contenteditable>
                           <body>
                           <p>This is a paragraph</p>
                           <h3>This is a heading</h3>
@@ -426,41 +736,49 @@
                           <a href="www.google.com">This is a link</a>
                           </body>
                         </code></pre>
-                </section>
-                <section>
-                    <h4>How to see the source HTML of a webpage</h4>
-                    <small>You’ll need to look at the HTML source of the web page that your program will work with.
-                        To do this, right-click (or CTRL-click on OS X) any web page in your web browser,
-                        and select View Source or View page source to see the HTML text of the page.</small>
-                    <img height="300" data-src="pics/view_page_source.jpg" alt="view_page_source">
-                    <div class="fragment">
-                    <small>Another option is to use Developer tools (F12 in Chrome) and inspect the elements</small>
-                    </div>
-                </section>
             </section>
-
             <section>
-                <section>
-                    <h3>Your first Webscraper</h3>
-                </section>
-                <section>
-                    <h4>1. Import your dependencies</h4>
-                    <small><a href="http://docs.python-requests.org/en/master/">requests</a> is a Python library to get the content of a URL (amongst other things). We will use this to get our HTML file.
-                        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a> is a Python library for extracting data from HTML and XML files.</small>
-                      <pre><code class="python" data-trim contenteditable>
+                <h4>How to see the source HTML of a webpage</h4>
+                <small>You’ll need to look at the HTML source of the web page that your program will work with.
+                    To do this, right-click (or CTRL-click on OS X) any web page in your web browser,
+                    and select View Source or View page source to see the HTML text of the page.
+                </small>
+                <img height="300" data-src="pics/view_page_source.jpg" alt="view_page_source">
+                <div class="fragment">
+                    <small>Another option is to use Developer tools (F12 in Chrome) and inspect the elements</small>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h3>Your first Webscraper</h3>
+            </section>
+            <section>
+                <h4>1. Import your dependencies</h4>
+                <small><a href="http://docs.python-requests.org/en/master/">requests</a> is a Python library to get the
+                    content of a URL (amongst other things). We will use this to get our HTML file.
+                    <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a> is a Python
+                    library for extracting data from HTML and XML files.
+                </small>
+                <pre><code class="python" data-trim contenteditable>
                           import sys # basic system library in python, used to exit the script prematurely
                           import requests
                           from bs4 import BeautifulSoup
                           from datetime import datetime  # We will use this to print the time of the scraping
                         </code></pre>
-                </section>
-                <section>
-                    <h4>2. Set the URL and proxies</h4>
-                    <small>A proxy server is a gateway between the internet and you.
-                        All the content will go through the proxy to the internet and back to you.
-                        If you are in a corporate network you will need a proxy to access the internet. Ask your instructors if you need it!</small>
-                    <small>In this example we will try to get Apples stock price at the moment of scraping from marketwatch.com</small>
-                      <pre><code class="python" data-trim contenteditable>
+            </section>
+            <section>
+                <h4>2. Set the URL and proxies</h4>
+                <small>A proxy server is a gateway between the internet and you.
+                    All the content will go through the proxy to the internet and back to you.
+                    If you are in a corporate network you will need a proxy to access the internet. Ask your instructors
+                    if you need it!
+                </small>
+                <small>In this example we will try to get Apples stock price at the moment of scraping from
+                    marketwatch.com
+                </small>
+                <pre><code class="python" data-trim contenteditable>
                           # Proxy dict of the form:
                           # proxy_dict = {
                           #     'http': 'http://myproxy:12345',
@@ -471,12 +789,13 @@
                           # The URL you want to scrape
                           url = "https://www.marketwatch.com/investing/stock/aapl"
                         </code></pre>
-                </section>
-                <section>
-                    <h4>3. Get the HTML content</h4>
-                    <small>In order to parse the web page we need to get all of its content first. We will be using
-                    the requests module for this.</small>
-                      <pre><code class="python" data-trim contenteditable>
+            </section>
+            <section>
+                <h4>3. Get the HTML content</h4>
+                <small>In order to parse the web page we need to get all of its content first. We will be using
+                    the requests module for this.
+                </small>
+                <pre><code class="python" data-trim contenteditable>
                           # Get the content of the page using the requests library
                           resp = requests.get(url, stream=True, proxies=proxy_dict)
                           if resp.status_code != 200: # 200 means success
@@ -485,29 +804,36 @@
                           else:
                               raw_html = resp.content
                         </code></pre>
-                        <small>Full list of status codes <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">here</a> (Funny bonus: read about status 418).</small>
-                </section>
-                <section>
-                    <h4>4. Inspect your data </h4>
-                    <small>Now you can inspect <pre>raw_html</pre> to make sure the request worked.</small>
-                    <pre><code class="python" data-trim contenteditable>
+                <small>Full list of status codes <a
+                        href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">here</a> (Funny bonus: read about
+                    status 418).
+                </small>
+            </section>
+            <section>
+                <h4>4. Inspect your data </h4>
+                <small>Now you can inspect
+                    <pre>raw_html</pre>
+                    to make sure the request worked.
+                </small>
+                <pre><code class="python" data-trim contenteditable>
                         raw_html
                     </code></pre>
-                    <img height="300" src="pics/webscraping_raw_data.PNG" alt="raw_html">
-                </section>
-                <section>
-                    <h4>5. Create an HTML Parser</h4>
-                    <small>We'll use BeautifulSoup to parse our HTML file:</small>
-                     <pre><code class="python" data-trim contenteditable>
+                <img height="300" src="pics/webscraping_raw_data.PNG" alt="raw_html">
+            </section>
+            <section>
+                <h4>5. Create an HTML Parser</h4>
+                <small>We'll use BeautifulSoup to parse our HTML file:</small>
+                <pre><code class="python" data-trim contenteditable>
                         soup = BeautifulSoup(raw_html, 'html.parser')
                     </code></pre>
-                </section>
-                <section>
-                    <h4>6. Parse the elements</h4>
-                    <small>Now we will need to know which element/tag we want to use.
-                        We can use the page inspect tool for this.</small>
-                    <small>From the inspection we know the element we want to use looks like this:</small>
-                    <pre><code class="html" data-trim contenteditable>
+            </section>
+            <section>
+                <h4>6. Parse the elements</h4>
+                <small>Now we will need to know which element/tag we want to use.
+                    We can use the page inspect tool for this.
+                </small>
+                <small>From the inspection we know the element we want to use looks like this:</small>
+                <pre><code class="html" data-trim contenteditable>
                         <bg-quote
                                 class="value positive"
                                 field="Last"
@@ -516,132 +842,154 @@
                                 data-last-stamp="1548863998002"
                                 data-last-raw="165.32">165.32</bg-quote>
                     </code></pre>
-                </section>
-                <section>
-                    <small> Different elements can have different attributes (for example id, class,..etc).
-                    Based on this we can select those using BeautifulSoup.</small>
-                    <table style="font-size: 25px">
-                        <thead>
-                            <tr>
-                                <th>Selector</th>
-                                <th>Matches</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>soup.select('div')</td>
-                                <td>All elements named &lt;div&gt;</td>
-                            </tr>
-                            <tr>
-                                <td>soup.select('#author')</td>
-                                <td>Element with an 'id' attribute = 'author'</td>
-                            </tr>
-                            <tr>
-                                <td>soup.select('.notice')</td>
-                                <td>All element that use the 'class' attribute = 'notice'</td>
-                            </tr>
-                            <tr>
-                                <td>soup.select('div span')</td>
-                                <td>All elements named &lt;span&gt; within a &lt;div&gt; element</td>
-                            </tr>
-                            <tr>
-                                <td>soup.select('input[name]')</td>
-                                <td>All elements named &lt;input&gt; that have a 'name' attribute (with any value)</td>
-                            </tr>
-                         <tr>
-                                <td>soup.select('input[name=Kathrin]')</td>
-                                <td>All elements named &lt;input&gt; that have a 'name' attribute = 'Kathrin'</td>
-                            </tr>
-                        </tbody>
-                    </table><br>
-                    <div class="fragment">
+            </section>
+            <section>
+                <small> Different elements can have different attributes (for example id, class,..etc).
+                    Based on this we can select those using BeautifulSoup.
+                </small>
+                <table style="font-size: 25px">
+                    <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Matches</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>soup.select('div')</td>
+                        <td>All elements named &lt;div&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>soup.select('#author')</td>
+                        <td>Element with an 'id' attribute = 'author'</td>
+                    </tr>
+                    <tr>
+                        <td>soup.select('.notice')</td>
+                        <td>All element that use the 'class' attribute = 'notice'</td>
+                    </tr>
+                    <tr>
+                        <td>soup.select('div span')</td>
+                        <td>All elements named &lt;span&gt; within a &lt;div&gt; element</td>
+                    </tr>
+                    <tr>
+                        <td>soup.select('input[name]')</td>
+                        <td>All elements named &lt;input&gt; that have a 'name' attribute (with any value)</td>
+                    </tr>
+                    <tr>
+                        <td>soup.select('input[name=Kathrin]')</td>
+                        <td>All elements named &lt;input&gt; that have a 'name' attribute = 'Kathrin'</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                <div class="fragment">
                     <small>The various selector patterns can be combined to make sophisticated matches.
-                        For example, <code>soup.select('p #author')</code> will match any element that has an id attribute of author,
-                        as long as it is also inside a &lt;p&gt; element.</small></div>
-                </section>
-                <section>
-                    <small>In our case we want to get the tag called <code>bg-quote</code> with the <code>field</code> = 'Last'.
-                    The way to achieve this is using the select statement as follows:</small>
-                    <div class="fragment">
+                        For example, <code>soup.select('p #author')</code> will match any element that has an id
+                        attribute of author,
+                        as long as it is also inside a &lt;p&gt; element.
+                    </small>
+                </div>
+            </section>
+            <section>
+                <small>In our case we want to get the tag called <code>bg-quote</code> with the <code>field</code> =
+                    'Last'.
+                    The way to achieve this is using the select statement as follows:
+                </small>
+                <div class="fragment">
                     <pre><code class="python" data-trim contenteditable>
                         element_with_price = soup.select('bg-quote[field=Last]')
-                    </code></pre><br>
-                    </div>
-                     <div class="fragment">
-                         <small>When you inspect <code>element_with_price</code> you will notice that this returns a list.
-                             This makes sense because our select could match more than one element! In our case the select is detailed enough to only
-                         return one, therefore we can just access the first element of the list instead:</small>
+                    </code></pre>
+                    <br>
+                </div>
+                <div class="fragment">
+                    <small>When you inspect <code>element_with_price</code> you will notice that this returns a list.
+                        This makes sense because our select could match more than one element! In our case the select is
+                        detailed enough to only
+                        return one, therefore we can just access the first element of the list instead:
+                    </small>
                     <pre><code class="python" data-trim contenteditable>
                         element_with_price = soup.select('bg-quote[field=Last]')[0]
                     </code></pre>
-                    </div>
-                </section>
-                <section>
-                    <h4>7. Retrieve the price value</h4>
-                    <small>Sometimes you will want to scrape the value of an attribute, and sometimes the text between the tags:</small>
-                    <pre><code class="html" data-trim contenteditable>
+                </div>
+            </section>
+            <section>
+                <h4>7. Retrieve the price value</h4>
+                <small>Sometimes you will want to scrape the value of an attribute, and sometimes the text between the
+                    tags:
+                </small>
+                <pre><code class="html" data-trim contenteditable>
                         <p class="some-class" field="some_field">some text</p>
                     </code></pre>
-                    <small>In the example above you might be interested in either the field ("some_field") or
-                        the text (some text) between the &lt;p&gt; tags.</small><br><br>
-                    <div class="fragment">
-                        <small>
-                        BeautifulSoup offers us the functionality to get exactly that:</small>
-                     <pre><code class="python" data-trim contenteditable>text = element.get_text()  # Will return 'some text'
-                    </code></pre>
-                    </div>
-                     <div class="fragment">
-                        <small>
-                        To get an attribute value we would use <code>get(..)</code> instead of <code>get_text()</code></small>
-                     <pre><code class="python" data-trim contenteditable>
-                        field_name = element.get('field')  # Will return 'some_field'</code></pre>
-                    </div>
-                </section>
-
-                    <section>
+                <small>In the example above you might be interested in either the field ("some_field") or
+                    the text (some text) between the &lt;p&gt; tags.
+                </small>
+                <br><br>
+                <div class="fragment">
                     <small>
-                        In our case we are interested in the text between the tags (The actual price!).</small>
-                     <pre><code class="python" data-trim contenteditable>
-                        price_text = element_with_price.get_text()
+                        BeautifulSoup offers us the functionality to get exactly that:
+                    </small>
+                    <pre><code class="python" data-trim contenteditable>text = element.get_text()  # Will return 'some text'
                     </code></pre>
-                        <small>Attention: This will always return a string. If you want the actual numerical value you will need to
-                        convert this to a float!</small>
-                </section>
-                <section>
-                    <h4>8. Finalize</h4>
-                    <small>Now you can do some more processing with your data or just simply print it out</small>
+                </div>
+                <div class="fragment">
+                    <small>
+                        To get an attribute value we would use <code>get(..)</code> instead of <code>get_text()</code>
+                    </small>
                     <pre><code class="python" data-trim contenteditable>
-                        print("The Apple Share price at {} was {}$".format(datetime.now(), price_text))
-                    </code></pre>
-                </section>
+                        field_name = element.get('field')  # Will return 'some_field'</code></pre>
+                </div>
             </section>
 
             <section>
-                <h2>Thank you!!</h2>
+                <small>
+                    In our case we are interested in the text between the tags (The actual price!).
+                </small>
+                <pre><code class="python" data-trim contenteditable>
+                        price_text = element_with_price.get_text()
+                    </code></pre>
+                <small>Attention: This will always return a string. If you want the actual numerical value you will need
+                    to
+                    convert this to a float!
+                </small>
+            </section>
+            <section>
+                <h4>8. Finalize</h4>
+                <small>Now you can do some more processing with your data or just simply print it out</small>
+                <pre><code class="python" data-trim contenteditable>
+                        print("The Apple Share price at {} was {}$".format(datetime.now(), price_text))
+                    </code></pre>
+            </section>
+        </section>
+
+        <section>
+            <h2>Thank you!!</h2>
+        </section>
+
+        <!-- LESSON 6 -->
+        <section id="lesson-6">
+            <h1>Learn more Python</h1>
+            <h3>Lesson 6</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
+
+        <!-- Working with Data-->
+        <section title="Introduction to pandas">
+            <section>
+                <h3>Data processing with pandas</h3>
+                <ul>
+                    <li>pandas is Python's data analysis library. It should make working with and manipulating datasets
+                        in Python easier.
+                    </li>
+                    <li>Inside pandas is two data stuctures: Series and DataFrame</li>
+                </ul>
             </section>
 
-            <!-- LESSON 6 -->
-            <section id="lesson-6">
-                <h1>Learn more Python</h1>
-                <h3>Lesson 6</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
-            </section>
-
-            <!-- Working with Data-->
-            <section title="Introduction to pandas">
-                <section>
-                    <h3>Data processing with pandas</h3>
-                    <ul>
-                        <li>pandas is Python's data analysis library. It should make working with and manipulating datasets in Python easier.</li>
-                        <li>Inside pandas is two data stuctures: Series and DataFrame </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Some imports</h3>
-                    <pre>
+            <section>
+                <h3>Some imports</h3>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             import pandas as pd
                             import numpy as np
@@ -649,37 +997,37 @@
                         </code>
                     </pre>
 
-                    <ul>
-                        <li><code>numpy</code> is a powerful scientific computing library</li>
-                        <li><code>pandas</code> implementation often needs <code>numpy</code> so you should import both</li>
-                        <li><code>matplotlib.pyplot</code>  is for plotting data</li>
-                        <li>The import abbreviations are conventions</li>
-                    </ul>
-                </section>
+                <ul>
+                    <li><code>numpy</code> is a powerful scientific computing library</li>
+                    <li><code>pandas</code> implementation often needs <code>numpy</code> so you should import both</li>
+                    <li><code>matplotlib.pyplot</code> is for plotting data</li>
+                    <li>The import abbreviations are conventions</li>
+                </ul>
             </section>
+        </section>
 
-            <section title="Series">
-                <section>
-                    <h3>Series</h3>
-                    <small>Use for one dimensional data (e.g. a time series or a column of data). Try it out!</small>
-                    <pre>
+        <section title="Series">
+            <section>
+                <h3>Series</h3>
+                <small>Use for one dimensional data (e.g. a time series or a column of data). Try it out!</small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             import random
                             data = random.sample(range(10), 10)
                             ts = pd.Series(data)
                         </code>
                     </pre>
-                    <ul>
-                        <li>Here, we generate a list of random numbers as dummy data</li>
-                        <li>Notice that <code>pandas</code> indexes the data for you as the integer 0..N </li>
-                    </ul>
+                <ul>
+                    <li>Here, we generate a list of random numbers as dummy data</li>
+                    <li>Notice that <code>pandas</code> indexes the data for you as the integer 0..N</li>
+                </ul>
 
-                </section>
+            </section>
 
-                <section>
-                    <h3> Indexing</h3>
-                    <small> Try it out! </small>
-                    <pre>
+            <section>
+                <h3> Indexing</h3>
+                <small> Try it out!</small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             ts[6]
                             print(type(ts[6]))
@@ -688,17 +1036,19 @@
                             ts[ts>7]
                         </code>
                     </pre>
-                    <small>Add a value to the Series as follows.</small>
-                    <pre>
+                <small>Add a value to the Series as follows.</small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             ts[10]=4
                         </code>
                     </pre>
-                </section>
-                <section>
-                    <h3> DatetimeIndex </h3>
-                    <small>We don't need to use numbers as the index. We could use a list of strings, for example. But what if the date represents a time series?</small>
-                    <pre>
+            </section>
+            <section>
+                <h3> DatetimeIndex </h3>
+                <small>We don't need to use numbers as the index. We could use a list of strings, for example. But what
+                    if the date represents a time series?
+                </small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             start = datetime(2018, 1, 1)
                             end = datetime(2018, 1, 10)
@@ -706,27 +1056,28 @@
                             date_range
                             ts = pd.Series(data,index=(date_range))
                         </code>
-                    </pre>q
-                </section>
+                    </pre>
+                q
+            </section>
 
-                <section>
-                    <h3> Plotting </h3>
-                    <small> Try it out! </small>
-                    <pre>
+            <section>
+                <h3> Plotting </h3>
+                <small> Try it out!</small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             ts.plot()
                         </code>
                     </pre>
-                </section>
-
             </section>
 
+        </section>
 
-            <section title="DataFrame">
-                <section>
-                    <h3>DataFrame</h3>
-                    <small>Tabular data structure comprised of rows and columns (e.g. spreadsheet, database table)</small>
-                    <pre>
+
+        <section title="DataFrame">
+            <section>
+                <h3>DataFrame</h3>
+                <small>Tabular data structure comprised of rows and columns (e.g. spreadsheet, database table)</small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             data = {'red': random.sample(range(10), 10),
                                     'blue': random.sample(range(10), 10),
@@ -734,130 +1085,130 @@
                             df = pd.DataFrame(data)
                         </code>
                     </pre>
-                    <small>The keys of the dictionary have become the column name of the DataFrame.
-                        Much like Series the index defaulted to 0...N.
-                        But, this can be set by passing in an "<code>index=</code>" argument.
-                    </small>
-                </section>
+                <small>The keys of the dictionary have become the column name of the DataFrame.
+                    Much like Series the index defaulted to 0...N.
+                    But, this can be set by passing in an "<code>index=</code>" argument.
+                </small>
+            </section>
 
-                <section>
-                    <h3>Indexing by column</h3>
-                    <small> We index by the column first, and then the row. </small>
-                    <pre>
+            <section>
+                <h3>Indexing by column</h3>
+                <small> We index by the column first, and then the row.</small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             value = df['blue'][5]
                         </code>
                     </pre>
-                    <small> Can extract a column. A column in a pandas DataFrame is pandas Series. </small>
-                    <pre>
+                <small> Can extract a column. A column in a pandas DataFrame is pandas Series.</small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             column = df['red']
                         </code>
                     </pre>
-                    <small> Can select multiple columns by using a list of the relevant column names. This will return a DataFrame.</small>
-                    <pre>
+                <small> Can select multiple columns by using a list of the relevant column names. This will return a
+                    DataFrame.
+                </small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             multiple_columns = df[['red', 'blue']]
                         </code>
                     </pre>
-                </section>
+            </section>
 
-                <section>
-                    <h3>Indexing by row</h3>
-                    <small> Select rows using <code>.loc[]</code>, which gets rows by index.
-                        There is also <code>iloc[]</code>, which gets rows by position (and hence only takes an integer).
-                        A row is a pandas Series.</small>
-                    <pre>
+            <section>
+                <h3>Indexing by row</h3>
+                <small> Select rows using <code>.loc[]</code>, which gets rows by index.
+                    There is also <code>iloc[]</code>, which gets rows by position (and hence only takes an integer).
+                    A row is a pandas Series.
+                </small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             df.loc[5]
                         </code>
                     </pre>
-                    <small>Select multiple rows by passing a list to <code>loc</code></small>
-                    <pre>
+                <small>Select multiple rows by passing a list to <code>loc</code></small>
+                <pre>
                         <code class="python" data-trim contenteditable>
                             df.loc[[3,6,9]]
                         </code>
                     </pre>
-                </section>
-
             </section>
 
+        </section>
 
-            <section title="Data analysis worked example">
-                <section>
-                    <h2>Importing data</h2>
-                </section>
 
-                <section>
-                    <h3>Blank slide **remove**</h3>
-                    <pre>
+        <section title="Data analysis worked example">
+            <section>
+                <h2>Importing data</h2>
+            </section>
+
+            <section>
+                <h3>Blank slide **remove**</h3>
+                <pre>
                         <code class="python" data-trim contenteditable>
 
                         </code>
                     </pre>
-                </section>
-
             </section>
 
+        </section>
 
 
+        <section>
+            <h2>Thank you!!</h2>
+        </section>
 
 
-            <section>
-                <h2>Thank you!!</h2>
-            </section>
-
-
-        </div>
     </div>
+</div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-    <script>
-        // More info https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-            center: true,
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-            transition: 'none', // none/fade/slide/convex/concave/zoom
+        transition: 'none', // none/fade/slide/convex/concave/zoom
 
-            // More info https://github.com/hakimel/reveal.js#dependencies
-            dependencies: [{
-                src: 'lib/js/classList.js',
-                condition: function() {
-                    return !document.body.classList;
-                }
-            }, {
-                src: 'plugin/markdown/marked.js',
-                condition: function() {
-                    return !!document.querySelector('[data-markdown]');
-                }
-            }, {
-                src: 'plugin/markdown/markdown.js',
-                condition: function() {
-                    return !!document.querySelector('[data-markdown]');
-                }
-            }, {
-                src: 'plugin/highlight/highlight.js',
-                async: true,
-                callback: function() {
-                    hljs.initHighlightingOnLoad();
-                }
-            }, {
-                src: 'plugin/search/search.js',
-                async: true
-            }, {
-                src: 'plugin/zoom-js/zoom.js',
-                async: true
-            }, {
-                src: 'plugin/notes/notes.js',
-                async: true
-            }]
-        });
-    </script>
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function () {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/search/search.js',
+            async: true
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+</script>
 
 </body>
 
