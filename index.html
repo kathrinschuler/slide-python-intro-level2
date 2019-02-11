@@ -339,27 +339,270 @@
                 <h2>Thank you!!</h2>
             </section>
 
-            <!-- LESSON 3 -->
-            <section id="lesson-3">
-                <h1>Learn more Python</h1>
-                <h3>Lesson 3</h3>
-                <p>
-                    <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with Python</a></small>
-                </p>
-            </section>
+                   <!-- LESSON 3 -->
+        <section id="lesson-3">
+            <h1>Learn more Python</h1>
+            <h3>Lesson 3</h3>
+            <p>
+                <small>Closely following <a href="https://automatetheboringstuff.com/">Automate the boring stuff with
+                    Python</a></small>
+            </p>
+        </section>
 
-            </section>
-            <!-- Regex-->
-            <section title="Regex">
-                <section>
-                    <h2>Regular Expressions</h2>
-                </section>
-            </section>
-
-
+        </section>
+        <!-- Regex-->
+        <section title="Regex">
             <section>
-                <h2>Thank you!!</h2>
+                <h2>Pattern Matching with Regular Expressions</h2>
             </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>What is a Regular Expression?</h4>
+                <small>You may be familiar with searching for text by pressing CTRL-F and typing in the words you’re
+                    looking for.
+                    Regular expressions go one step further: They allow you to specify a pattern of text to search for.
+                </small>
+                <br><br>
+                <div class="fragment">
+                    <small>Examples are:
+                        <ul>
+                            <li>Phone numbers: If you live in the US you know it will be 3 digits followed by a hyphen,
+                                followed by 4 more digits and maybe an area code (415-555-6789)
+                            </li>
+                            <li>Email addresses: You know it will be some characters, followed by the @ sign, followed
+                                by characters, a dot and some ending (john_smith@gmail.com)
+                            </li>
+                        </ul>
+                    </small>
+                    <br><br></div>
+                <div class="fragment">
+                    <small><font color="#006400"><q>Knowing regular expressions can mean the difference between solving
+                        a problem in 3 steps and solving it in 3,000 steps.</q></font></small>
+                    <br><br>
+                </div>
+                <div class="fragment">
+                    <small>Notepad++ and other (decent) text editors support search and replacing by regular expression.
+                    </small>
+                </div>
+            </section>
+            <section>
+                <small>We will start by writing a program to find text patterns without using regular expressions
+                    and then see how to use regular expressions to make the code much less bloated.
+                </small>
+            </section>
+
+        </section>
+        <section>
+            <section>
+                <h4>Detecting a phone number</h4>
+                <small>... without Regex!</small>
+                <small>You know the pattern: three numbers, a hyphen, three numbers, a hyphen, and four numbers.</small>
+                <pre><code class="python" data-trim contenteditable>
+                        def isPhoneNumber(text):
+                            if len(text) != 12:
+                                return False
+                            for i in range(0, 3):
+                                if not text[i].isdecimal():
+                                    return False
+                            if text[3] != '-':
+                                return False
+                            for i in range(4, 7):
+                                if not text[i].isdecimal():
+                                    return False
+                            if text[7] != '-':
+                                return False
+                            for i in range(8, 12):
+                                if not text[i].isdecimal():
+                                    return False
+                            return True
+
+                    </code> </pre>
+            </section>
+            <section>
+                <small>We can call this function now with a valid phone number, and an invalid one:</small>
+                <pre><code class="python" data-trim contenteditable>
+                       print('415-555-4242 is a phone number:')
+                       print(isPhoneNumber('415-555-4242'))
+                       print('Moshi moshi is a phone number:')
+                       print(isPhoneNumber('Moshi moshi'))</code></pre>
+                <div class="fragment">
+                     <pre><code class="python" data-trim contenteditable>
+                       415-555-4242 is a phone number:
+                       True
+                       Moshi moshi is a phone number:
+                       False</code></pre>
+                </div>
+                <div class="fragment">
+                    <small>Imagine how much more code you would need to add to find all the phone numbers in a text.
+                    </small>
+                </div>
+            </section>
+            <section>
+                <p>The functionality of this code is very limited...</p>
+                <div class="fragment">
+                    <small>What if phone numbers in the text are formatted like (415) 555-1234 or 415.555.1234?</small>
+                </div>
+                <div class="fragment">
+                    <small><code>isPhoneNumber()</code> would return False even though it is a phone number!</small>
+                </div>
+                <div class="fragment">
+                    <small>...and adding more code to cover all those cases would make the function much less readable
+                    </small>
+                </div>
+            </section>
+
+        </section>
+        <section>
+            <section>
+                <h3>Regular Expressions</h3>
+                <p>in short <q>RegEx</q></p>
+                <div class="fragment">
+                    <small>Regular expressions are descriptions for a pattern of text.
+                        For example, a <code>\d</code> in a regex stands for a digit character—that is, any single numeral 0 to 9.
+                        The regex <code>\d\d\d-\d\d\d-\d\d\d\d</code> is used by Python to match the same text the previous <code>isPhoneNumber()</code> function did:
+                        a string of three numbers, a hyphen, three more numbers, another hyphen, and four numbers.</small>
+                </div>
+            </section>
+            <section>
+                <p>RegExes can be much more powerful:</p>
+                <small>For example we can add <code>{3}</code> after the <code>\d</code> to repeat it 3 times.
+                    This leads us to a slightly shorter regex that also matches the phone number format:</small><br><br>
+                <small><code>\d{3}-\d{3}-\d{4}</code></small>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Regex in Python</h3>
+                <pre><code class="python" data-trim contenteditable>
+                    import re #This is the regex module
+                </code></pre>
+                <small>Always remember to import this module. Otherwise you'll get error messages that re is not defined.</small>
+            </section>
+            <section>
+                <small>First, we need to create a regex object. This is done as follows:</small>
+                 <pre><code class="python" data-trim contenteditable>
+                     phoneNumberRegex = re.compile('\d{3}-\d{3}-\d{4}')
+                </code></pre>
+                <div class="fragment">
+                    <small>Then we can search for the first match using the regex object:</small>
+                 <pre><code class="python" data-trim contenteditable>
+                     # search returns the FIRST match.
+                     >>> text = "Susan's number is 415-555-3344 and mine is 123-333-4455"
+                     >>> matches = phoneNumberRegex.search(text)
+                     >>> phone_number = matches.group()
+                       '415-555-1234'
+                </code></pre>
+                </div>
+                <div class="fragment">
+                    <small>Alternatively we can find all matches:</small><pre><code class="python" data-trim contenteditable>
+                     # findall returns ALL matches as a list
+                     >>> all_matches = phoneNumberRegex.findall(text)
+                     >>> all_matches
+                       ['415-555-1234', '123-333-4455']
+                </code></pre>
+                </div>
+            </section>
+            <section>
+                <h3>Review</h3>
+                <small>
+                <ol>
+                    <li>Import the regex module with <code>import re</code></li>
+                    <li>Create a Regex object with the <code>re.compile()</code> function. (Remember to use a string.)</li>
+                    <li>Pass the string you want to search into the Regex object’s <code>search()/findall()</code> method. This returns a Match object for <code>search()</code> and a list for <code>findall()</code></li>
+                    <li>If you used <code>search()</code>, call the Match object’s <code>group()</code> method to return a string of the actual matched text.</li>
+                </ol></small>
+                <br><br>
+                <small>You can also test your regex <a href="https://regex101.com/">here</a>. Make sure you select Python!</small>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h3>More Patterns</h3>
+            </section>
+            <section>
+                <h4>Groups</h4>
+                <small>Say you want to separate the area code from the rest of the phone number.
+                    Adding parentheses will create groups in the regex: <code>(\d\d\d)-(\d\d\d-\d\d\d\d)</code>.
+                    Then you can use the <code>group()</code> match object method to grab the matching text from just one group.</small>
+                 <div class="fragment">
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Susan's phone number is 415-555-3344 and mine is 123-333-4455"
+                     >>> phoneNumberRegex = re.compile('(\d\d\d)-(\d\d\d-\d\d\d\d)')
+                     >>> matches = phoneNumberRegex.search(text)
+                     >>> phone_number = matches.group(1)  # Index 1 returns the first group of parenthesis
+                       '415'
+                     >>> phone_number = matches.group(2)  # Second group of parentheses
+                       '555-3344'
+                     >>> phone_number = matches.group(0)  # passing 0 or nothing will return the whole matched string
+                       '415-555-3344'
+                </code></pre>
+                </div>
+            </section>
+             <section>
+                <small>Similarly when you want to use the <code>findall()</code> function</small>
+                 <div class="fragment">
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Susan's phone number is 415-555-3344 and mine is 123-333-4455"
+                     >>> phoneNumberRegex = re.compile('(\d{3})-(\d{3}-\d{4})')
+                     >>> matches = phoneNumberRegex.findall(text)
+                     >>> matches
+                       [('415', '555-3344'), ('123', '333-4455')]
+                     >>> matches[0][1]
+                       '555-3344'
+                </code></pre>
+                </div>
+                 <div class="fragment">
+                  <small>Notice that the code above does not return the full phone number.
+                      If you are using groups and you still want the full match to be returned you need to wrap everything into a group:</small>
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Susan's phone number is 415-555-3344 and mine is 123-333-4455"
+                     >>> phoneNumberRegex = re.compile('((\d{3})-(\d{3}-\d{4}))')
+                     >>> matches = phoneNumberRegex.findall(text)
+                     >>> matches
+                       [('415-555-3344', '415', '555-3344'), ('123-333-4455', '123', '333-4455')]
+                </code></pre>
+                </div>
+                <!--<div class="fragment">-->
+                    <!--<small>The \( and \) escape characters in the raw string passed to <code>re.compile()</code> will match actual parenthesis characters.</small>-->
+                <!--</div>-->
+            </section>
+            <section>
+                <h4>Pipe (the <q>or</q> matching)</h4>
+                <small>Assuming you allow different characters at a single place,
+                    for example you'd like to match batman, batmobile, batwoman and batcopter.
+                For that we can use the | (<q>pipe</q> character):</small>
+                 <div class="fragment">
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Batman and Batwoman were driving a Batmobile"
+                     >>> phoneNumberRegex = re.compile('Bat(man|woman|mobile|copter)')
+                     >>> matches = phoneNumberRegex.search(text)
+                     >>> matches.group()
+                       'Batman'
+                </code></pre>
+                </div>
+                <div class="fragment">
+                    <small>In case you want to use the findall() function (Remember to wrap it in a group if you want the full match)</small>
+                 <pre><code class="python" data-trim contenteditable>
+                     >>> text = "Batman and Batwoman were driving a Batmobile"
+                     >>> phoneNumberRegex = re.compile('(Bat(man|woman|mobile|copter))')
+                     >>> matches = phoneNumberRegex.findall(text)
+                     >>> matches
+                       [('Batman', 'man'), ('Batwoman', 'woman'), ('Batmobile', 'mobile')]
+                </code></pre>
+                </div>
+            </section>
+            <section>
+
+            </section>
+        </section>
+
+
+        <section>
+            <h2>Thank you!!</h2>
+        </section>
 
             <!-- LESSON 4 -->
             <section id="lesson-4">
