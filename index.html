@@ -107,11 +107,234 @@
                 </p>
             </section>
             <!-- Manipulating Strings-->
-            <section title="Manipulating Strings">
+            <section title="String Basics">
+                <h2>Let's review strings</h2>
+                <div class="fragment">
+                <pre><code class="python" data-trim contenteditable>
+                >>> "This is a string"
+                'This is a string'
+                >>> 'This is also a string'
+                'This is also a string'
+                >>> "This string will not end'
+                SyntaxError: EOL while scanning string literal
+                </code></pre>
+                </div>
+                <div class="fragment">
+                <small>If you need to use single quotes within the string, it should be enclosed in double quotes, and vice versa.  <b>What if you need to use both?</b></small>
+                </div>
+            </section>
+            <section title="Escape Characters">
                 <section>
-                    <h2>Manipulating Strings</h2>
+                    <h3>Escape Characters</h3>
+                    <small><b>Escape characters</b> allow us to use characters that are otherwise impossible to put into a string.</small>
+                    <small>An <b>escape character</b> consists of a backslash (\) followed by the character you want to add to the string.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'Say hi to Bob\'s mother.'
+                        "Say hi to Bob's mother."
+                        >>> 'Say hi to Bob\'s "mother."'
+                        'Say hi to Bob\'s "mother."'
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>Escape Characters</h3>
+                    <table style="font-size: 20px">
+                        <thead>
+                            <tr>
+                                <th>Escape character</th>
+                                <th>Prints as</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>\'</td>
+                                <td>Single quote</td>
+                            </tr>
+                            <tr>
+                                <td>\"</td>
+                                <td>Double quote</td>
+                            </tr>
+                            <tr>
+                                <td>\t</td>
+                                <td>Tab</td>
+                            </tr>
+                            <tr>
+                                <td>\n</td>
+                                <td>Newline (line break)</td>
+                            </tr>
+                            <tr>
+                                <td>\\</td>
+                                <td>Backslash (\)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h3>Raw Strings</h3>
+                    <small>If you place an <i>r</i> before the beginning quotation mark of a string, it will be considered a <b>raw string</b></small>
+                    <small>This causes Python to ignore escape characters, and print any backslashes that appear in the string.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> print('That is Alice\'s cat.')
+                        That is Alice's cat.
+                        >>> print(r'That is Alice\'s cat.')
+                        That is Alice\'s cat.
+                        </code></pre>
+                    </div>
+                    <aside class="notes">
+                        - Raw strings are most helpful if you are typing string values that contain many backslashes.  Remember that for our next lesson!
+                    </aside>
                 </section>
             </section>
+            <section title="Multiline Strings">
+                <section>
+                    <h3>Triple Quotes</h3>
+                    <small>The \n escape character is helpful for formatting long strings, but is an artifact of older programming languages.</small>
+                    <small>Python provides multiline strings, which are surrounded by either <b>three</b> single quotes or <b>three</b> double quotes.</small>
+                    <div class="fragment">
+                        <small>Try writing the following code:</small>
+                        <pre><code class="python" data-trim contenteditable>
+                        print('''Dear Alice,
+
+                        Eve's cat has been arrested for catnapping, cat burglary, and extortion.
+
+                        Sincerely,
+                        Bob''')</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>Multiline Comments</h3>
+                    <small>Remember that we use the # character to mark the beginning of a comment for the remainder of a line.</small>
+                    <div class="fragment">
+                        <small>A multiline string is often used for comments that span multiple lines.  The following is valid and acceptable Python code:</small>
+                        <pre><code class="python" data-trim contenteditable>
+                        def spam():
+                            """This is a multiline comment to document
+                            the purpose of the spam() function.
+                            
+                            It's to print spam."""
+                            print('Hello!')</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section title="Indexing, Slicing, and 'in'">
+                <section>
+                    <h3>Indexing in Lists</h3>
+                    <small>Recall that the items in a list can be referred to using 'indices' or 'indexes'.</small>
+                    <pre><code class="python" data-trim contenteditable>
+                    >>> my_list = ['Hello', 'world', '!']
+                    >>> my_list[0]
+                    'Hello'
+                    >>> my_list[1:]
+                    ['world', '!']</pre></code>
+                </section>
+                <section>
+                    <h3>Indexing in Strings</h3>
+                    <small>Strings are <i>'indexed'</i> in the same manner as lists.</small>
+                    <br/><small>That means you can access the individual characters in the string by referring to their position within the string.</small>
+                    <div class="fragment">
+                        <small>Let's consider the string "Hello world!":</small>
+                        <pre><code data-trim contenteditable>
+                        '  H  e  l  l  o     w  o  r  l  d  !  '
+                        #  0  1  2  3  4  5  6  7  8  9  10 11</code></pre>
+                    </div>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> my_str = 'Hello world!'
+                        >>> my_str[0]
+                        'H'
+                        >>> my_str[6]
+                        'w'
+                        >>> my_str[0:6]
+                        'Hello '
+                        >>> world = my_str[6:]
+                        >>> world + my_str
+                        'world!Hello world!'</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>Check if a value exists</h3>
+                    <small>Just like in a list, you can check for the existence of a value within a string using the <b>in</b> and <b>not in</b> keywords.</small>
+                    <small>This will evaluate to a boolean value; either True or False.  The check is literal, for the exact string, and case-sensitive.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'Hello' in 'Hello World'
+                        True
+                        >>> 'Hello' in 'Hello'
+                        True
+                        >>> 'HELLO' in 'Hello World'
+                        False
+                        >>> '' in 'spam'
+                        True
+                        >>> 'cats' not in 'cats and dogs'
+                        False</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section title='Object Methods'>
+                <section>
+                    <h1>INTRODUCE OBJECTS AND THEIR METHODS</h1>
+                </section>
+            </section>
+            <section title='Case Sensitivity'>
+                <section>
+                    <h3>Case Manipulation</h3>
+                    <small>Python provides helpful methods on string objects to convert between cases. <b>upper()</b> and <b>lower()</b>.will return a new string with every character converted to the desired case.  This can be very helpful when trying to make case-insensitive comparisons.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> spam = 'Hello world!'
+                        >>> spam = spam.upper()
+                        >>> spam
+                        'HELLO WORLD!'
+                        >>> spam = spam.lower()
+                        >>> spam
+                        'hello world!'</code></pre>
+                    </div>
+                    <aside class="notes">Note that the methods return a new string, rather than modifying the string in-place.  If you want to replace the same variable, you will have to assign the return value back to it</aside>
+                </section>
+                <section>
+                    <h3>Case Manipulation</h3>
+                    <small>The <b>upper()</b> and <b>lower()</b> methods are especially useful when trying to make case-insensitive comparisons.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        feeling = input('How are you? ')
+                        if feeling.lower() == 'great':
+                            print('I feel great too.')
+                        else:
+                            print('I hope the rest of your day is good.')</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>Case Verification</h3>
+                    <small>If you do want to be case-sensitive, there are also the methods <b>isupper()</b> and <b>islower()</b>.  These return a boolean value of True or False to indicate whether the entire string is uppercase or lowercase, respectively.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> spam = 'Hello world!'
+                        >>> spam.islower()
+                        False
+                        >>> spam.isupper()
+                        False
+                        >>> 'HELLO'.isupper()
+                        True
+                        >>> 'abc12345'.islower()
+                        True
+                        >>> '12345'.islower()
+                        False
+                        >>> '12345'.isupper()
+                        False</code></pre>
+                    </div>
+                </section>
+            </section>
+	<!--
+-	Show the isX() methods and point to documentation and how to use it
+-	Show startswith(), endswith() etc
+-	Join() and split() -> EXERCISES (see project at end of chapter aout bullet points)
+-	Strip() -> introduce concept of Whitespace too
+-   format()
+-	PASSWORD PROJECT -> Homework?
+-	Practice questions and lots of “Time for Practice”-->
+
             <section>
                 <h2>Thank you!!</h2>
             </section>
