@@ -365,14 +365,148 @@
                 </div>
             </section>
         </section>
-        <!--
-    -	Show the isX() methods and point to documentation and how to use it
-    -	Show startswith(), endswith() etc
-    -	Join() and split() -> EXERCISES (see project at end of chapter aout bullet points)
-    -	Strip() -> introduce concept of Whitespace too
-    -   format()
-    -	PASSWORD PROJECT -> Homework?
-    -	Practice questions and lots of “Time for Practice”-->
+<section title="isX Methods">
+                <section>
+                    <h3>isX Methods</h3>
+                    <small>Along with <b>isupper()</b> and <b>islower()</b>, there are several other string-based methods that begin with the word <i>is</i>.  These methods all return a boolean value that describes the nature of the string.</small>
+                    <table style="font-size: 20px">
+                        <thead>
+                            <tr>
+                                <th>isX method</th>
+                                <th>Returns True if the string only contains...</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>isalpha()</td>
+                                <td>letters</td>
+                            </tr>
+                            <tr>
+                                <td>isalnum()</td>
+                                <td>letters and numbers</td>
+                            </tr>
+                            <tr>
+                                <td>isdecimal()</td>
+                                <td>numbers</td>
+                            </tr>
+                            <tr>
+                                <td>isspace()</td>
+                                <td>spaces, tabs, and new-lines</td>
+                            </tr>
+                            <tr>
+                                <td>istitle()</td>
+                                <td>words that begin with an uppercase letter, followed only by lowercase letters</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h3>isX Practice</h3>
+                    <small>Verify the following in your interpreter:</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'hello'.isalpha()
+                        True
+                        >>> 'hello123'.isalpha()
+                        False
+                        >>> 'hello123'.isalnum()
+                        True
+                        >>> 'hello'.isalnum()
+                        True
+                        >>> '123'.isdecimal()
+                        True
+                        >>> '    '.isspace()
+                        True
+                        >>> 'This Is Title Case'.istitle()
+                        True
+                        >>> 'This Is Title Case 123'.istitle()
+                        True
+                        >>> 'This Is not Title Case'.istitle()
+                        False
+                        >>> 'This Is NOT Title Case Either'.istitle()
+                        False</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>Time for Practice!</h3>
+                    <small>Can you write a program that asks users for their age and a password, continuing to prompt them until it is provided in the correct format?  The age must be only numbers, and the password can only have letters and numbers.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        "Enter your age:"
+                        >>> one hundred
+                        "Please enter a number for your age."
+                        "Enter your age:"
+                        >>> 100
+                        "Select a new password (letters and numbers only):"
+                        >>> password!
+                        "Passwords can only have letters and numbers."
+                        "Select a new password (letters and numbers only):"
+                        >>> password1</code></pre>
+                    </div>
+                </section>
+            </section>
+            <section title="More String Methods">
+                <section>
+                    <h3>startswith() and endswith()</h3>
+                    <small>The <b>startswith()</b> and <b>endswith()</b> methods return True only if the string value that they are called on begins (or ends) with the string passed to the method.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'Hello world!'.startswith('Hello')
+                        True
+                        >>> 'Hello world!'.endswith('world!')
+                        True
+                        >>> 'abc123'.startswith('abcdef')
+                        False
+                        >>> 'abc123'.endswith('12')
+                        False
+                        >>> 'Hello world!'.startswith('Hello world!')
+                        True
+                        >>> 'Hello world!'.endswith('Hello world!')
+                        True</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>Joining Strings</h3>
+                    <small>While we can concatenate strings using addition (<b>+</b>) this can become tedious for large groupings of strings, or if you do not know what the strings will look like in advance.<br/>For this purpose, we can use the <b>join()</b> method.  The <b>join()</b> method is called on a string, gets passed a list of strings, and returns a string.  The returned string is the concatenation of each string that was in the passed-in list.  Let's practice!</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> ', '.join(['cats', 'rats', 'bats'])
+                        'cats, rats, bats'
+                        >>> ' '.join(['My', 'name', 'is', 'Simon'])
+                        'My name is Simon'
+                        >>> 'ABC'.join(['My', 'name', 'is', 'Simon'])
+                        'MyABCnameABCisABCSimon'</code></pre>
+                    </div>
+                    <div class="fragment">
+                        <small>Notice that the string that we call <b>join()</b> on is inserted in between each string of the list that we passed in.  This can allow us to create coherent sentences, parse-able strings, and even strictly formatted files like csv.</small>
+                    </div>
+                </section>
+                <section>
+                    <h3>Splitting Strings</h3>
+                    <small>Remember that <b>join()</b> is called on a string value and is passed a list.  The <b>split()</b> method does the opposite: it is called on a string value and returns a list of strings.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'My name is Simon'.split()
+                        ['My', 'name', 'is', 'Simon']</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <small>By default, the string is split wherever whitespace characters (space, tab, newline) are found.  These whitespace characters are removed from the list that is returned. You can pass something called a <i>delimiter string</i> to the <b>split()</b> method to specify a different string/character to split on.</small>
+                    <div class="fragment">
+                        <pre><code class="python" data-trim contenteditable>
+                        >>> 'MyABCnameABCisABCSimon'.split('ABC')
+                        ['My', 'name', 'is', 'Simon']
+                        >>> 'My name is Simon'.split('m')
+                        ['My na', 'e is Si', 'on']</code></pre>
+                    </div>
+                </section>
+            </section>
+	<!--
+-	Join() and split() -> EXERCISES (see project at end of chapter aout bullet points)
+-	Strip() -> introduce concept of Whitespace too
+-   format()
+-	PASSWORD PROJECT -> Homework?
+-	Practice questions and lots of “Time for Practice”-->
 
         <section>
             <h2>Thank you!!</h2>
