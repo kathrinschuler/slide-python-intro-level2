@@ -1169,6 +1169,7 @@
                             print(type(ts[3:8]))
                             ts[ts>7]
                         </code>
+
                     </pre>
                 <small>Add a value to the Series as follows.</small>
                 <pre>
@@ -1176,13 +1177,40 @@
                             ts[10]=4
                         </code>
                     </pre>
-            </section>
-            <section>
-                <h3> DatetimeIndex </h3>
-                <small>We don't need to use numbers as the index. We could use a list of strings, for example. But what
-                    if the date represents a time series?
-                </small>
-                <pre>
+
+                </section>
+                <section>
+                    <h3>Masks</h3>
+                    <small> Pandas data structures can be indexed using a Boolean array. This is know as creating a mask. </small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            mask = ts > 7
+                            ts[mask]
+                        </code>
+                    </pre>
+
+                    <small> In one line </small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            ts[ts > 7]
+                            ts[(ts > 3) & (ts < 7)]
+                            ts[~(ts==6)]
+                        </code>
+                    </pre>
+
+                    <small>
+                         <ul>
+                             <li>& = and </li>
+                             <li>| = or </li>
+                             <li>~ = not</li>
+                         </ul>
+                    </small>
+
+                </section>
+                <section>
+                    <h3> DatetimeIndex </h3>
+                    <small>We don't need to use numbers as the index. We could use a list of strings, for example. But what if the date represents a time series?</small>
+                    <pre>
                         <code class="python" data-trim contenteditable>
                             start = datetime(2018, 1, 1)
                             end = datetime(2018, 1, 10)
@@ -1191,8 +1219,8 @@
                             ts = pd.Series(data,index=(date_range))
                         </code>
                     </pre>
-                q
-            </section>
+
+                </section>
 
             <section>
                 <h3> Plotting </h3>
@@ -1270,19 +1298,99 @@
 
         </section>
 
-
-        <section title="Data analysis worked example">
-            <section>
-                <h2>Importing data</h2>
-            </section>
-
-            <section>
-                <h3>Blank slide **remove**</h3>
-                <pre>
+            <section title="Data analysis example">
+                <section>
+                    <h2>Importing data</h2>
+                    <pre>
                         <code class="python" data-trim contenteditable>
-
+                            df = pd.read_csv('datasets/dataset1.csv')
                         </code>
                     </pre>
+                    <small>
+                        Inspect the data....
+                    </small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df.columns
+                            df.shape
+                            df.head(10)
+                            df.sample(10)
+                        </code>
+                    </pre>
+                    <small>
+                        <ul>
+                            <li>The first row has became the names of the columns in the dataframe </li>
+                            <li>pandas has generated an index </li>
+                        </ul>
+                     </small>
+
+                </section>
+
+                <section>
+                    <h3>Filter data</h3>
+                    <small>Filter columns</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df[['Ticker', 'MarketCap']]
+                            df.loc[:, ['Ticker','MarketCap']]
+                            df.iloc[:, [0,3]]
+                            df.filter(['Ticker','MarketCap'], axis=1)
+                        </code>
+                    </pre>
+                    <small>Filter rows</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df.loc[[345,400], :]
+                            df.iloc[[345,400], :]
+                            df.filter(items=[345, 400], axis=0)
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Calculations</h3>
+                    <small>sum</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df['MarketCap'].sum()
+                        </code>
+                    </pre>
+                    <small>mean</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df['TotalReturnYTD'].mean()
+                        </code>
+                    </pre>
+                    <small>count</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df['TotalReturnYTD'].count()
+                        </code>
+                    </pre>
+                    <small>unique values</small>
+                    <pre>
+                        <code class="python" data-trim contenteditable>
+                            df['CountryOfDomicile'].nunique()
+                        </code>
+                    </pre>
+
+                </section>
+
+                <section>
+                    <h3>Time for practise</h3>
+                    <small>
+                        <ul>
+                            <li>What's the total market cap for BRITAIN companies?</li>
+                            <li>What's the average return YTD for FINLAND companies?</li>
+                            <li>How many companies have a return YTD greater than 1?</li>
+                            <li>How many companies have a market cap over £100 BLN?</li>
+                            <li>How many companies in SPAIN?</li>
+                            <li>How many companies have a return YTD between -10% and +10%?</li>
+                            <li>Create a new dataframe called "gb" with British companies and their market caps.</li>
+                        </ul>
+                     </small>
+                </section>
+
             </section>
 
         </section>
@@ -1293,6 +1401,12 @@
         </section>
 
 
+            <section>
+                <h2>Thank you!!</h2>
+            </section>
+
+
+        </div>
     </div>
 </div>
 
